@@ -1,0 +1,4 @@
+Meeting Agenda Items
+Discuss what needs to happen for us to have a working website by the end of the Sprint
+
+We took attendance and then discussed what needs to be done for the end of the sprint. First on the agenda, the front end devs will finish the design to turn the template into our own website. APIs will need to be integrated into the website. Tyler and Ryan will continue to work on integration on the backend. Gaby has written some documentation for the website descriptions, APIs, and other information. We discussed what needed to be completed before the spring ending on Sunday, including the website transformation, among other things. 

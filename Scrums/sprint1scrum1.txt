@@ -1,0 +1,8 @@
+Meeting Agenda Items
+Discussing current progress
+Updating team members on tasks
+
+
+This was our first SCRUM meeting, so we kicked off the meeting by talking about what we have accomplished so far since there was nothing to discuss since a prior meeting. We have the basic standardized files from Heroku currently and then were able to update then deploy them along with working with the Have I Been Pwned API. Then, we opened the product backlog and went through all the tasks one by one updating their statuses since we had not done that yet. Upon finishing that, we discussed all the tasks that we had finished to discover we have made great progress for sprint 1 and are on track. We then finished the meeting by talking about the next thing we want to tackle, which is implementing the API into what is being deployed on Heroku and then getting all the frameworks settled and reading some more of the documentation. We then went through tasks that were marked not started or in progress to decide what tasks we wanted to have finished by the next SCRUM meeting. It was a good first SCRUM meeting of sprint 1. 
+
+
