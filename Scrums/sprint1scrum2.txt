@@ -1,5 +1,0 @@
-Meeting Agenda Items
-Go over what has been done
-Assign more tasks to be completed
-
-We took attendance and then discussed what has been done by going through the product backlog. There have been changes documented on the product backlog so we decided to not change things before scrum meetings. Ryan has connected to VirusTotal so we now have another API connected at ⅔ APIs. The frameworks are standardized. Tyler streamlined the Github so it is easy to deploy. Gaby started the writing of the website’s text body. We have made plans of what to get done. Ryan and Tyler will be working more on connecting the APIs and getting the website to work with the Python script. Akhil will work more on the React front end bringing on the discussion if we want to use React. Gaby will finish writing more text. Alyssa is working on all the product manager documents. We then went through the product backlog to decide what else needs to be done by the next meeting like possibly getting the html files created. Great productive second meeting.
