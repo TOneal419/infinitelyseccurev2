@@ -23,7 +23,7 @@ class Pwn(models.Model):
     #other entries returned by the api
 
     def __str__(self):
-        return f"{self.email} {self.created_at}"
+        return f"{self.Name} {self.Domain} {self.BreachDate} {self.Description}"
 
 
        
