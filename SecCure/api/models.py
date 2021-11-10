@@ -8,10 +8,10 @@ import requests
 # Create your models here.
 class Pwn(models.Model):
     # TESTING
-    Name = models.TextField(max_length=36, default="", unique=False)
-    Domain = TextField(max_length=36, default="", unique=False)
+    Name = models.TextField(max_length=50, default="", unique=False)
+    Domain = models.TextField(max_length=100, default="", unique=False)
     BreachDate = models.DateField(auto_now_add=True)
-    Description = TextField(max_length=36, default="", unique=False)
+    Description = models.TextField(max_length=400, default="", unique=False)
 
     # BELOW IS ORIGINAL
 
