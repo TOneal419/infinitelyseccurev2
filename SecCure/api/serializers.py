@@ -6,4 +6,5 @@ from .models import Pwn
 class PwnSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pwn
-        fields = ('id', 'email','created_at') #add more fields as they are created
+        fields = ('Name', 'Domain', 'BreachDate', 'Description')
+        #fields = ('id', 'email','created_at') #add more fields as they are created
