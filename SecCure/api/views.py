@@ -29,7 +29,7 @@ class PwnView(generics.CreateAPIView):
                 data = r.json()
                 #serializer_var = PwnSerializer(r.json())                
                 return Response(r.json(), status=status.HTTP_200_OK)               # THIS IS WORKING! 
-                #return Response(serializer_var.data, status=status.HTTP_200_OK)                                      
+                #return Response(serializer_var.data, status=status.HTTP_200_OK)    # returning nothing (empty json)                                  
             else:
                 attempt_num += 1
                 # You can probably use a logger to log the error here

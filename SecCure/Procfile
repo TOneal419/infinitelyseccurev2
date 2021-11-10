@@ -1,1 +1,1 @@
-web: gunicorn infinitelyseccure2.wsgi --log-file -
+web: gunicorn --pythonpath SecCure SecCure.wsgi --log-file -
