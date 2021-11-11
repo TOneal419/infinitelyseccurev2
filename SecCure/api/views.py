@@ -7,6 +7,7 @@ from .models import Pwn
 from .serializers import PwnSerializer
 import requests
 import time
+import json
 # Create your views here.
 
 
@@ -27,8 +28,18 @@ class PwnView(generics.CreateAPIView):
             r = requests.get(url)
             if r.status_code == 200:
                 data = r.json()
+                #print (r.json()[0])
+                list_holder = []
+                
+                for element in data :
+                    serializer_var = {}
+                    serializer_var.update({"Name" : element['Name'], "Domain" : element['Domain'], "Description" : element['Description'] }) 
+                    list_holder.append(serializer_var)
+               # print (serializer_var)
+                list = json.dumps(list_holder)
+                list2 = json.loads(list)
                 #serializer_var = PwnSerializer(r.json())                
-                return Response(r.json(), status=status.HTTP_200_OK)               # THIS IS WORKING! 
+                return Response(list2, status=status.HTTP_200_OK)               # THIS IS WORKING! 
                 #return Response(serializer_var.data, status=status.HTTP_200_OK)    # returning nothing (empty json)                                  
             else:
                 attempt_num += 1
