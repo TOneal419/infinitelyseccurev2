@@ -25,7 +25,11 @@ class Pwn(models.Model):
     def __str__(self):
         return f"{self.Name} {self.Domain} {self.BreachDate} {self.Description}"
 
-
+class Vtot(models.Model):
+    Url = models.TextField(max_length = 50, default = "", unique = True)
+    id = models.PositiveBigIntegerField(primary_key=True)
+    def __str__(self):
+        return f"{self.Url} {self.id}"
        
 
 

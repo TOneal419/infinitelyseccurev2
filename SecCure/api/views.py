@@ -3,11 +3,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
 from rest_framework.serializers import Serializer
-from .models import Pwn
-from .serializers import PwnSerializer
+from .models import Pwn, Vtot
+from .serializers import PwnSerializer, VtotSerializer
 import requests
 import time
 import json
+import vt
 # Create your views here.
 
 
@@ -49,5 +50,27 @@ class PwnView(generics.CreateAPIView):
 
     # End of testing
 
+class VtotView(generics.CreateAPIView):
+    queryset = Vtot.objects.all()
+    serializer_class = VtotSerializer
 
-    
+    def post(self, request):
+        my_api_key = "dffa53b364bfea34d474c326cf33101f6647b2e5ea89812664d94bd71f6a94fd"
+        client = vt.Client(my_api_key)
+        url_string = "http://www.virustotal.com"
+        url_id = vt.url_id(request.data['Url'])
+        url = client.get_object("/urls/{}", url_id)
+        # print ('$')
+
+        # print (request.data['Url'])
+        # print(url.times_submitted)
+        # print ('$')
+        # print(url.last_analysis_stats)
+        # print ('$')
+        var = {"Times_submitted" : url.times_submitted, "Analysis" : url.last_analysis_stats}
+
+        list = var
+        lists = json.dumps(list)
+        list2 = json.loads(lists)
+        client.close()
+        return Response(list2, status=status.HTTP_200_OK)

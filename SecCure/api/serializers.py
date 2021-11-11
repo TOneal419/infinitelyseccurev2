@@ -2,6 +2,7 @@
 from django.db.models import fields
 from rest_framework import serializers
 from .models import Pwn
+from .models import Vtot
 
 class PwnSerializer(serializers.ModelSerializer):
 
@@ -17,3 +18,10 @@ class PwnSerializer(serializers.ModelSerializer):
         fields = ('Name', 'Domain', 'BreachDate', 'Description')
 
        #fields = ('id', 'email','created_at') #add more fields as they are created
+
+
+class VtotSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vtot
+        Url = serializers.CharField(max_length = 200)
+        fields = ('id', "Url")
