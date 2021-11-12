@@ -1,23 +1,57 @@
-<!DOCTYPE html>
-<html>
+{% load static %}
+
+{% block content %}
+<html style="background: #edcdd4">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SecCure</title>
-    {% load static %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    />
-    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
   </head>
-  <body>
-    <div id="main">
-      <div id="app"></div>
-    </div>
 
-    <script src="{% static "frontend/main.js" %}"></script>
-  </body>
+
+  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </li>
+        <li>
+          <a href="/learn">Learn</a>
+        </li>
+        <li>
+          <a href="/virustotal">File/URL Check</a>
+        </li>
+        <li>
+          <a href="/pwn">Pwn Check</a>
+        </li>
+        <li>
+          <a href="/test">Test Yourself</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<appDiv />
+<body style="text-align: center;">
+
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Welcome to SecCure</h1>
+      <p style="margin: 1em auto 2em; font-size: 30px;">Our mission is to be educational to those who need to learn more about staying
+        safe on the internet.</p>
+      <p style="margin: 1em auto 2em; font-size: 30px;">You are here because someone who cares about you has told you about this website.
+        We hope you use the site with all of its capabilities. Here you can become SecCure while staying safe.</p>
+      <div id="shell" style="margin-left: 25%">
+          <button class="box, module" onclick="location.href='learn'">Learn: Educate yourself to stay safe out there!</button>
+          <button class="box, module" onclick="location.href='pwn'">Pwn Check: Check if you have had your email or phone number in a data breach!</button>
+          <button class="box, module" onclick="location.href='virustotal'">File/URL Check: Check if a file or URL you want to open has been tampered with!</button>
+          <button class="box, module" onclick="location.href='test'">Check your knowledge and see if you’re ready to stay secure!</button>
+
+        </div>
+    </div>
+  </div>
+</body>
+{% endblock %}
+
 </html>
