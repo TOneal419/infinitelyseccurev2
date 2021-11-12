@@ -126,21 +126,22 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_URL = '/frontend/static/'
-## TESTING BELOW
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL)
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
-django_heroku.settings(locals())
 
-try:
-    from .local_settings import *
-except:
-    pass
+# STATIC_URL = '/frontend/static/'
+# ## TESTING BELOW
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, STATIC_URL)
+# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static/')
+# django_heroku.settings(locals())
+
+# try:
+#     from .local_settings import *
+# except:
+#     pass
 ##
-#STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
-#STATIC_URL = '/frontend/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
+STATIC_URL = '/frontend/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
