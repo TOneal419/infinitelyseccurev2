@@ -1,0 +1,4 @@
+release: python manage.py migrate
+
+web: gunicorn --pythonpath SecCure SecCure.wsgi --log-file -
+release: heroku ps:scale web=1
