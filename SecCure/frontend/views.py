@@ -9,3 +9,9 @@ def learn(request, *args, **kwargs):
 
 def pwn(request, *args, **kwargs):
     return render(request, 'frontend/pwn.html')
+
+def vtot(request, *args, **kwargs):
+    return render(request, 'frontend/virustotal.html')
+
+def test(request, *args, **kwargs):
+    return render(request, 'frontend/test.html')
