@@ -2,6 +2,7 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
+    background: #edcdd4;
 }
 
 #main{
@@ -98,4 +99,8 @@ button {
   background: #88a2e2;
   position: relative;
   border: 5px solid blue;
+}
+
+.container {
+  padding: 15px;
 }
