@@ -21,10 +21,10 @@ export default class Navigation extends Component {
                 <a href="/learn.html">Learn</a>
               </li>
               <li>
-                <a href="/virustotal.html">File/URL Check</a>
+                <a href="/virustotal.html">VirusTotal</a>
               </li>
               <li>
-                <a href="/pwn.html">Pwn Check</a>
+                <a href="/pwn.html">havibeenpwned</a>
               </li>
               <li>
                 <a href="/test.html">Test Yourself</a>
