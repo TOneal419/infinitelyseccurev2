@@ -3,12 +3,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
 from rest_framework.serializers import Serializer
-from .models import Pwn, Vtot
-from .serializers import PwnSerializer, VtotSerializer
+from .models import Pwn, Vtot, TTS
+from .serializers import PwnSerializer, VtotSerializer, TTSSerializer
 import requests
 import time
 import json
 import vt
+from .voicerss_tts import *
 # Create your views here.
 
 
@@ -25,17 +26,21 @@ class PwnView(generics.CreateAPIView):
         while attempt_num < 3:
             url = "https://haveibeenpwned.com/api/v3/breaches"
             #payload = {'name':'Ahashare'}
+            payload = {}
             #r = requests.post(url, data = payload)
-            r = requests.get(url)
+            if (request.data['domainname'] != "") :
+                payload = {'domain': request.data['domainname']}
+            else:
+                payload = {'domain': 'adobe.com'} 
+            r = requests.get(url, params=payload)
             if r.status_code == 200:
                 data = r.json()
                 #print (r.json()[0])
                 list_holder = []
-                
-                for element in data :
-                    serializer_var = {}
-                    serializer_var.update({"Name" : element['Name'], "Domain" : element['Domain'], "Description" : element['Description'] }) 
-                    list_holder.append(serializer_var)
+                serializer_var = {}
+                serializer_var.update({"Name": data[0]['Name'], "Domain" : data[0]['Domain'], "Description": data[0]['Description'], "BreachDate": data[0]['BreachDate']})
+            
+                list_holder.append(serializer_var)
                # print (serializer_var)
                 list = json.dumps(list_holder)
                 list2 = json.loads(list)
@@ -74,3 +79,56 @@ class VtotView(generics.CreateAPIView):
         list2 = json.loads(lists)
         client.close()
         return Response(list2, status=status.HTTP_200_OK)
+
+
+class TTSView(generics.CreateAPIView):
+    queryset = TTS.objects.all()
+    serializer_class = TTSSerializer
+ 
+    def post(self, request):
+        res = "Failure"
+        stat = 400
+       
+        try:
+            fi = "frontend\\static\\mp3\\"
+            file = fi + request.data['filename'] + ".mp3"
+            
+           
+            urlVoice = 'https://api.voicerss.org/?'
+            hl = 'en-us'
+            script = request.data['scripts']
+            print (script)
+
+            voice = speech(
+            {
+                    'key' : '5eba043727a84c0c94631a2848250a6d',
+                    'src' : script,
+                    'hl'  : 'en-us',
+                    'v'   : 'Mary',
+                    'r'   : '0',
+                    'f'   : '44khz_16bit_stereo',
+                    'c' : "mp3",
+                    'b64' : 'false',
+                    'ssml' : 'false',
+                   
+            }
+            )
+            stat = 401
+            data3 = (voice['response'])
+            # play_buffer (audio__data support the buffer interface, num_channels, bytes per sample, sample rate in Hz)
+            with open(file, 'wb+') as f:
+                    f.write(data3)
+            res = file
+            stat = 200
+ 
+        except Exception as e:
+            print (e)
+            # res = voice['error']
+            res = "Failed to send data for some reason"
+            # status = 400
+       
+        var = {'File' : res, 'Status' : stat}
+        list = json.dumps(var)
+        list2 = json.loads(list)
+ 
+        return Response(list2, status = stat)
