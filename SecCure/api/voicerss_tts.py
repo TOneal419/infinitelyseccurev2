@@ -25,14 +25,15 @@ def __request(settings):
 	
 	response = conn.getresponse()
 	content = response.read()
-	
-	if response.status != 200:
-		result['error'] = response.reason
-	elif content.find('ERROR') == 0:
-		result['error'] = content
-	else:
+	try:
+		if response.status != 200:
+			result['error'] = response.reason
+		elif content.find('ERROR') == 0:
+			result['error'] = content
+		else:
+			result['response'] = content
+	except:
 		result['response'] = content
-		
 	conn.close()
 
 	return result
