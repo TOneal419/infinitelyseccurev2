@@ -72,7 +72,7 @@ class VtotView(generics.CreateAPIView):
         # print ('$')
         # print(url.last_analysis_stats)
         # print ('$')
-        var = {"Times_submitted" : url.times_submitted, "Analysis" : url.last_analysis_stats}
+        var = {"Times_submitted" : url.times_submitted, "Stats" : url.last_analysis_stats, 'Data': url.last_analysis_results}
 
         list = var
         lists = json.dumps(list)
