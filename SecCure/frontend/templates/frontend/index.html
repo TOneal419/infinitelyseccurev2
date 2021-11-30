@@ -40,19 +40,33 @@
     <div class="container">
       <h1>Welcome to SecCure!</h1>
 
-      <audio controls autoplay>
-        <source src="{% static 'mp3/index1.mp3' %}" type ='audio/mpeg'>
-      </audio>
+      
 
       <p style="margin: 1em auto 2em; font-size: 25px;">Our mission is to be educational to those who need and want to learn more about staying
         safe on the internet.</p>
       <p style="margin: 1em auto 2em; font-size: 20px;">You are here because someone who cares about you has told you about this website.
         We hope you use the site with all of its capabilities. Here you can become SecCure while staying safe.</p>
+              <audio controls autoplay>
+                <source src="{% static 'mp3/home/intro.mp3' %}" type ='audio/mpeg'>
+              </audio>
+
       <div id="shell" style="margin-left: 25%">
           <button class="box, module" onclick="location.href='learn'">Learn: Educate yourself to stay safe out there!</button>
-          <button class="box, module" onclick="location.href='pwn'">havibeenpwned: Check if you have had your email or phone number in a data breach!</button>
+                <audio controls  >
+                  <source src="{% static 'mp3/home/learn.mp3' %}" type ='audio/mpeg'>
+                </audio>
+          <button class="box, module" onclick="location.href='pwn'">havibeenpwned: Check if a website you wish to visit has experienced a data breach!</button>
+                <audio controls  >
+                  <source src="{% static 'mp3/home/HIBP.mp3' %}" type ='audio/mpeg'>
+                </audio>
           <button class="box, module" onclick="location.href='virustotal'">VirusTotal: Check if a file or URL you want to open has been tampered with!</button>
-          <button class="box, module" onclick="location.href='test'">Check your knowledge and see if you’re ready to stay secure!</button>
+                <audio controls  >
+                  <source src="{% static 'mp3/home/VT.mp3' %}" type ='audio/mpeg'>
+                </audio>
+          <button class="box, module" onclick="location.href='test'">Test: Check your knowledge and see if you’re ready to stay secure!</button>
+                <audio controls  >
+                  <source src="{% static 'mp3/home/Test.mp3' %}" type ='audio/mpeg'>
+                </audio>
 
         </div>
     </div>

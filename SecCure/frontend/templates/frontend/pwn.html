@@ -50,31 +50,66 @@
       </ul>
     </div>
   </nav>
-
+  <audio autoplay>
+    <source src="{% static 'mp3/HIBP/welcome.mp3' %}" type ='audio/mpeg'>
+  </audio>
 <body>
   <h2>What does being "pwned" mean?</h2>
   <p>Being pwned means that an account of yours has been compromised.</p>
-
+        <audio controls>
+          <source src="{% static 'mp3/HIBP/pwned_means.mp3' %}" type ='audio/mpeg'>
+        </audio>
   <h2>What is haveibeenpwned?</h2>
   <p>haveibeenpwned is a site run by a trusted member of the cybersecurity community that is able to inform whether a domain has been compromised at some point.</p>
   <p>On the <a href="https://haveibeenpwned.com/">haveibeenpwned website</a>, you can check if your email and/or phone number has been compromised as well.</p>
-
+        <audio controls  >
+          <source src="{% static 'mp3/HIBP/hibp_is.mp3' %}" type ='audio/mpeg'>
+        </audio>
   <h2>What to do if you have been pwned?</h2>
   <p>If your account(s) have been compromised, you should change the password to the affected account(s).</p>
   <p>Ensure that you have two factor authentication enabled if you want to be more secure, it makes it harder to break into your account.</p>
-
+        <audio controls  >
+          <source src="{% static 'mp3/HIBP/pwned_todo.mp3' %}" type ='audio/mpeg'>
+        </audio>
   <h2>How to use:</h2>
   <p>Example Input that shows has been pwned: google</p>
   <p>Example Input that shows has not been pwned: pinterest</p>
-
+  
   <p>Input the domain name that you want to check in the text box here:</p>
-  <form>
-    <input id="pwninput" type="text">
+  <form id='form_vt' action='api/pwn' method="post">
+    <input id="pwninput" type="text" name="domainname">
+    <input id='pwninputid' type='hidden' name='Id'>
+    <a href="#" onclick='submitForm1()'>Submit</a>
+    
   </form>
-
+  <audio controls  >
+    <source src="{% static 'mp3/HIBP/using_hibp.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <script>
+    function submitForm1() {
+      //let form = document.getElementById("form_vt");
+      //document.getElementById("vtoutput").innerHTML = form.submit().innerHTML;
+      var http = new XMLHttpRequest();
+      
+      http.open("POST", "api/pwn", true);
+      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      var params = "domainname=" + document.getElementById('pwninput').value ;
+      http.send(params);
+      http.onload = function() {
+        const myObj = JSON.parse(http.responseText)[0]
+        var res = "The domain " + String(myObj.Domain) + " was breached on " + String(myObj.BreachDate);
+        res += ". " + String(myObj.Description);
+        document.getElementById('pwnoutput').innerHTML = res;
+        // finished with hibp now creating audio
+         
+      }
+    }
+  </script>
   <h2>Results:</h2>
   <p id="pwnoutput"></p>
-
+      {% comment %} <audio controls  >
+        <source src="{% static 'mp3/HIBP/results.mp3' %}" type ='audio/mpeg'>
+      </audio> {% endcomment %}
 
 </body>
 
