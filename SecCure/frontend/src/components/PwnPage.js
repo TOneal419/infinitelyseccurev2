@@ -1,6 +1,11 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React, {Component} from 'react';
 
-const element = <h1>Hello from Create React App</h1>
+export default class PwnPage extends Component{
+    constructor(props){
+        super(props);
+    }
 
-ReactDOM.render(element, document.getElementById("root"))
+    render(){
+        return <h1>THsi is hte Pwn page under scrutinity</h1>
+    }
+}

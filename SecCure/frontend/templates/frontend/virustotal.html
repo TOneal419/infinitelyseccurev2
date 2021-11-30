@@ -51,10 +51,18 @@
   <p>Example Input that shows has no maliciousness: www.pinterest.com</p>
 
   <p>Input the URL that you want to check in the text box here:</p>
-  <form>
-    <input id="vtinput" type="text">
-  </form>
+  <form id='form_vt' action='api/vt' method="post">
+    <input id="vtinput" type="text" name="Url">
+    <input id='vtinputid' type='hidden' name='Id'>
+    <a href="#" onclick='submitForm()'>Submit</a>
 
+  </form>
+  <script>
+    function submitForm() {
+      let form = document.getElementById("form_vt");
+      form.submit();
+    }
+  </script>
   <h2>Results:</h2>
   <p id="vtoutput"></p>
 

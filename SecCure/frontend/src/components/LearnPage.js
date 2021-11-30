@@ -1,21 +1,11 @@
-import React, {Component} from "react";
-import {render} from "react-dom";
-import HomePage from "./HomePage";
+import React, {Component} from 'react';
 
-
-export default class App extends Component{
+export default class LearnPage extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        return (
-        <div>
-            <LearnPage />
-        </div>
-        );
+        return <h1>Put learn page here</h1>
     }
 }
-
-const appDiv = document.getElementById("learn");
-render(<learn />, learnDiv);

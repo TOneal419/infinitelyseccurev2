@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import PwnPage from "../components/PwnPage";
-import LearnPage from "../components/LearnPage";
+import PwnPage from "./PwnPage";
+import LearnPage from "./LearnPage";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 export default class HomePage extends Component{
@@ -9,8 +9,14 @@ export default class HomePage extends Component{
     }
 
     render(){
-        return (
-          <HomePage/>
+        return (<p>Hey from home</p>
+            // <Router>
+            //     <Switch>
+            //         <Route exact path='/'><p>This is the homepage</p></Route>
+            //         <Route path='/learn' Component={LearnPage}></Route>
+            //         <Route path='/Pwn' Component={PwnPage}></Route>
+            //     </Switch>
+            // </Router>
         );
     }
 }

@@ -63,7 +63,10 @@ class VtotView(generics.CreateAPIView):
         my_api_key = "dffa53b364bfea34d474c326cf33101f6647b2e5ea89812664d94bd71f6a94fd"
         client = vt.Client(my_api_key)
         url_string = "http://www.virustotal.com"
-        url_id = vt.url_id(request.data['Url'])
+        # url_id = vt.url_id(request.data['Url'])
+
+        url_id = vt.url_id(request.POST.get('Url', 'www.google.com'))
+
         url = client.get_object("/urls/{}", url_id)
         # print ('$')
 
