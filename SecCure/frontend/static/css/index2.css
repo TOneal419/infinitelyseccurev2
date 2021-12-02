@@ -2,7 +2,12 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background: white;
+    /* background: white; */
+    background-image: url('download1.jpg');
+    background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    background-position:'center center';
 }
 
 #main{
@@ -20,7 +25,7 @@ html, body{
 }
 
 .jumbotron {
-background: white;
+background: transparent;
 color: #b13d59;
 padding-bottom: 80px
 }
