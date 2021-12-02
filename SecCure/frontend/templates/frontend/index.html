@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
   </head>
 
 
@@ -46,32 +46,81 @@
         safe on the internet.</p>
       <p style="margin: 1em auto 2em; font-size: 20px;">You are here because someone who cares about you has told you about this website.
         We hope you use the site with all of its capabilities. Here you can become SecCure while staying safe.</p>
-              <audio controls>
+              <audio id='intro'>
                 <source src="{% static 'mp3/home/intro.mp3' %}" type ='audio/mpeg'>
               </audio>
+              <a href="#" onclick="playAudio('intro')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+                <a href="#" onclick="pauseAudio('intro')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
 
-      <div id="shell" style="margin-left: 25%">
-          <button class="box, module" onclick="location.href='learn'">Learn: Educate yourself to stay safe out there!</button>
-                <audio controls  >
+      <div id="shell" style="margin-left: 22.15%">
+          <button class="box, module" > <a onclick="location.href='learn'">Learn: Educate yourself to stay safe out there!</a>
+            <a href="#" onclick="playAudio('learn')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+            <a href="#" onclick="pauseAudio('learn')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+          </button>
+                <audio id='learn'>
                   <source src="{% static 'mp3/home/learn.mp3' %}" type ='audio/mpeg'>
+
                 </audio>
-          <button class="box, module" onclick="location.href='pwn'">havibeenpwned: Check if a website you wish to visit has experienced a data breach!</button>
-                <audio controls  >
+               
+                
+          <button class="box, module"> <a onclick="location.href='pwn'">
+            havibeenpwned: Check if a website you wish to visit has experienced a data breach!</a>
+            <a href="#" onclick="playAudio('HIBP')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+            <a href="#" onclick="pauseAudio('HIBP')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+          </button>
+                <audio id='HIBP'>
                   <source src="{% static 'mp3/home/HIBP.mp3' %}" type ='audio/mpeg'>
                 </audio>
-          <button class="box, module" onclick="location.href='virustotal'">VirusTotal: Check if a file or URL you want to open has been tampered with!</button>
-                <audio controls  >
+                
+          <button class="box, module" ><a onclick="location.href='virustotal'">VirusTotal: Check if a file or URL you want to open has been tampered with!
+          </a>
+            <a href="#" onclick="playAudio('VT')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+            <a href="#" onclick="pauseAudio('VT')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+          </button>
+                <audio id='VT'>
                   <source src="{% static 'mp3/home/VT.mp3' %}" type ='audio/mpeg'>
                 </audio>
-          <button class="box, module" onclick="location.href='test'">Test: Check your knowledge and see if you’re ready to stay secure!</button>
-                <audio controls  >
+                
+          <button class="box, module"> <a onclick="location.href='test'">Test: Check your knowledge and see if you’re ready to stay secure!
+          </a>
+          <a href="#" onclick="playAudio('Test')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a href="#" onclick="pauseAudio('Test')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+
+          </button>
+                <audio id='Test'>
                   <source src="{% static 'mp3/home/Test.mp3' %}" type ='audio/mpeg'>
                 </audio>
+                
 
         </div>
+        {% comment %} THESE GO IN ORDER EVERY TWO GET GROUP TOGETHER LEARN--PWN--VT--TEST {% endcomment %}
+
+
+
+<br>
+
+
+
     </div>
+      
   </div>
+
 </body>
+
+
+<script>
+        function playAudio(value) {
+          var audio = document.getElementById(String(value));
+          audio.play();
+          //var audio = new Audio(String(value));
+          //audio.play();
+        }
+        function pauseAudio(value) {
+          var audio = document.getElementById(String(value));
+          audio.pause();
+        }
+       
+      </script>
 {% endblock %}
 
 </html>

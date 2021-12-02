@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
   </head>
 <div class="jumbotron">
   <nav class="navbar navbar-default navbar-static-top navbar-inverse">
@@ -34,53 +34,47 @@
     </div>
   </nav>
 
-  <audio>
-    <source src="{% static 'mp3/VT/welcome.mp3' %}" type ='audio/mpeg'>
-  </audio>
+ 
 <body>
   <h2>What does being "malicious" mean?</h2>
   <p>Malicious describes something that is intending to cause harm.</p>
-      <audio controls>
+      <audio id='mm'>
         <source src="{% static 'mp3/VT/malicious_means.mp3' %}" type ='audio/mpeg'>
       </audio>
+      <a  onclick="playAudio('mm')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('mm')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <h2>What is VirusTotal?</h2>
   <p>VirusTotal is a trusted site within the cybersecurity community that is able to check a URL and tell you if it is malicious.</p>
   <p>On the <a href="https://www.virustotal.com/gui/home/url">VirusTotal website</a>, you can also check files, IP addresses, domain names and file hashes to see if they are malicious.</p>
-      <audio controls  >
+      <audio id='VTis'  >
         <source src="{% static 'mp3/VT/VT_is.mp3' %}" type ='audio/mpeg'>
       </audio>
+      <a  onclick="playAudio('VTis')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('VTis')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <h2>What to do if you have discovered a malicious URL?</h2>
   <p>The obvious course of action is to NOT go to the link.  However if the majority is showing that the link is harmless, it is unlikely to cause harm.  Also if threats are not there, it is also unlikely to be malicious.</p>
-      <audio controls  >
+      <audio id='WTD'>
         <source src="{% static 'mp3/VT/What_to_do.mp3' %}" type ='audio/mpeg'>
       </audio>
+      <a  onclick="playAudio('WTD')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('WTD')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <h2>How to use:</h2>
   <p>Example Input that shows has some maliciousness: www.google.com</p>
   <p>Example Input that shows has no maliciousness: www.pinterest.com</p>
-      <audio controls  >
+      <audio id='HU'>
         <source src="{% static 'mp3/VT/How_to_Use.mp3' %}" type ='audio/mpeg'>
       </audio>
+      <a  onclick="playAudio('HU')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('HU')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <p>Input the URL that you want to check in the text box here:</p>
   <form id='form_vt' action='api/vt' method="post">
     <input id="vtinput" type="text" name="Url">
     <input id='vtinputid' type='hidden' name='Id'>
-    <a href="#" onclick='submitForm()'>Submit</a>
+    <a  onclick='submitForm()'>Submit</a>
 
   </form>
   <script>
-    /*
-    function submitAudio() {
-      var http = new XMLHttpRequest();
-      http.open("POST", "api/vt", true);
-      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      var params = "filename=" + "HIBP\\results" + "&scripts=" + String(document.getElementById("vtoutput").value);
-      http.send(params);
-      http.onload function() {
-        var audio = new Audio("VT/results.mp3");
-        audio.play();
-      }
-    }
-    */
+  
     function submitForm() {
       //let form = document.getElementById("form_vt");
       //document.getElementById("vtoutput").innerHTML = form.submit().innerHTML;
@@ -121,16 +115,42 @@
         printable1 += String(myObj.Stats.timeout) + " Search Engines Timed out " + timeout + "<br><br>";
         //JSON.stringify(http.responseText);
         document.getElementById('vtoutput').innerHTML = printable1;
+        var https = new XMLHttpRequest();
+          https.open("POST", "api/tts", true);
+          https.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          var hold = document.getElementById('vtoutput');
+          if (String(hold.innerHTML) == "undefined") {
+            hold = "No Content";
+          } 
+          var params = "filename=VT/results" +"&scripts=" + String(hold.textContent || hold.innerText) ;
+          https.send(params);
       }
     }
   </script>
   <h2>Results:</h2>
   <p id="vtoutput"></p>
-  {% comment %} <a href="#" onclick='submitAudio()'>Submit</a>
-  <audio controls  >
+  
+  <audio id='res'>
     <source src="{% static 'mp3/Vt/results.mp3' %}" type ='audio/mpeg'>
-  </audio> {% endcomment %}
+  </audio> 
+  <meta http-equiv="Cache-control" content="no-cache">
+  <a  onclick="playAudio('res')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('res')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  
 </body>
 </div>
+<script>
+  function playAudio(value) {
+    var audio = document.getElementById(String(value));
+    audio.play();
+    //var audio = new Audio(String(value));
+    //audio.play();
+  }
+  function pauseAudio(value) {
+    var audio = document.getElementById(String(value));
+    audio.pause();
+  }
+ 
+</script>
 {% endblock %}
 </html>

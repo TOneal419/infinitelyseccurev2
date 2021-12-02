@@ -2,7 +2,7 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #edcdd4;
+    background: white;
 }
 
 #main{
@@ -20,7 +20,7 @@ html, body{
 }
 
 .jumbotron {
-background: #edcdd4;
+background: white;
 color: #b13d59;
 padding-bottom: 80px
 }
@@ -83,8 +83,8 @@ ul {
     /* width: 98.6vw; */
     display: grid;
     grid-template-columns: repeat(2, 31.8%);
-    grid-auto-rows: 100%;
-    grid-gap: 30px;
+    grid-auto-rows: 50%;
+    grid-gap: 75px;
 }
 
 button {
@@ -94,8 +94,8 @@ button {
 .module {
   color: #b13d59;
   font-weight: 500;
-  width: 300px;
-  height: 100px;
+  width: 325px;
+  height: 125px;
   background: #88a2e2;
   position: relative;
   border: 5px solid blue;

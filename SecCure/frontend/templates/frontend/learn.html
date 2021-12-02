@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
   </head>
 <div class="jumbotron">
   <nav class="navbar navbar-default navbar-static-top navbar-inverse">
@@ -37,9 +37,11 @@
 <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Types of Attacks</h1>
 
   <p style="font-size: larger"> There are a variety of ways that different attacks may be presented to you, so it is important to stay informed of all of them so you can be aware and not fall into one. </p>
-        <audio controls>
+        <audio id='ToA'>
           <source src="{% static 'mp3/learn/ToA.mp3' %}" type ='audio/mpeg'>
         </audio>
+        <a onclick="playAudio('ToA')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a onclick="pauseAudio('ToA')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
   <ul>
   <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Phishing</h2></center>
     <div class="card" style="display:flex;">
@@ -53,9 +55,11 @@
       attention to the source as it could be an email or website with spelling/grammatical errors.
     </li>  
     
-          <audio controls  >
+          <audio id='phish'>
             <source src="{% static 'mp3/learn/phishing.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a onclick="playAudio('phish')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('phish')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
   </div>
 
   <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Man in the Middle</h2></center>
@@ -68,9 +72,11 @@
       secure and trusted networks or even setting up a VPN to protect yourself. A Secure Sockets Layer 
       certificate can also be protected on your website in order to encrypt a user's browser who visits.
     </li>
-          <audio controls  >
+          <audio id="MITM">
             <source src="{% static 'mp3/learn/MITM.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a onclick="playAudio('MITM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a onclick="pauseAudio('MITM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     <img src="{% static 'mtim.png' %}" alt="Laptop with login box hooked on a fishing hook" style="width:140%; border-radius: 25px;">
   </div>
 
@@ -88,9 +94,11 @@
       reason, it is more likely to occur on a higher-profile website although any website is still vulnerable to attack.
     </li>
     
-          <audio controls  >
+          <audio id="DoS">
             <source src="{% static 'mp3/learn/DoS.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a  onclick="playAudio('DoS')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('DoS')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
   </div>
   
     <br>
@@ -105,9 +113,11 @@
      One way to do this is making sure the dataa they are taking in for these entries are specific 
     to what they are wanting so other data won't be inserted.
     </li>
-          <audio controls  >
+          <audio id="SQL">
             <source src="{% static 'mp3/learn/SQL_Inject.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a  onclick="playAudio('SQL')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('SQL')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     <img src="{% static 'sqlinjection.png' %}" alt="Laptop with login box hooked on a fishing hook" style="width:160%; border-radius: 25px;">
   </div>
 
@@ -120,9 +130,11 @@
       and have that flaw fixed. This is fixed by the developer, but it can often take months or years.
     </li>  
 
-          <audio controls  >
+          <audio id="0day"  >
             <source src="{% static 'mp3/learn/0dayEx.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a  onclick="playAudio('0day')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('0day')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
   </div>
     <br>
 </ul>
@@ -134,9 +146,11 @@
     device. This includes different anti-malware and anti-virus softwares along with making sure you are downloading 
     safe files and connecting to private networks.
         </p>
-        <audio controls  >
+        <audio id='ToM' >
           <source src="{% static 'mp3/learn/ToM.mp3' %}" type ='audio/mpeg'>
         </audio>
+        <a  onclick="playAudio('ToM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('ToM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
   <br>
   <ul style="font-size: larger;">
     <li style="text-decoration: underline; color:#2776EA">Adware</li>
@@ -144,38 +158,47 @@
       It then uses any information it can collect about you in order to deliver more personalized ads to 
       your computer screen.
     </li> 
-            <audio controls  >
+            <audio id='Ad'>
               <source src="{% static 'mp3/learn/Adware.mp3' %}" type ='audio/mpeg'>
             </audio>
+            <a onclick="playAudio('Ad')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('Ad')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     <br>
     <li style="text-decoration: underline; color:#2776EA">Viruses</li>
     <li>A computer virus contains code that is malicious and when it runs is designed to cause harm or steal data.</li> 
-          <audio controls  >
+          <audio id='Vir'>
             <source src="{% static 'mp3/learn/Viruses.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a onclick="playAudio('Vir')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('Vir')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     <br>
     <li style="text-decoration: underline; color:#2776EA">Trojans</li>
     <li>These may also be known as a "trojan horse", but it a malicious software that disguises 
       itself to appear real in order to get you to run it on your computer.
     </li> 
-          <audio controls  >
+          <audio id="Toj">
             <source src="{% static 'mp3/learn/Trojans.mp3' %}" type ='audio/mpeg'>
           </audio>
+          <a  onclick="playAudio('Toj')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('Toj')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     <br>
     <li style="text-decoration: underline; color:#2776EA">Worms</li>
     <li>These worms work by being able to infect all the computers that are on the same network.
       They work by consuming bandwidth and interrupting networks.</li> 
-            <audio controls  >
+            <audio id='wom'>
               <source src="{% static 'mp3/learn/Worms.mp3' %}" type ='audio/mpeg'>
             </audio>
-            
+            <a onclick="playAudio('wom')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a onclick="pauseAudio('wom')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     <br>
     <li style="text-decoration: underline; color:#2776EA">Ransomware</li>
     <li>Ransomware is normally targeted at individuals.
       It threatens to publish a user's personal data and/or block access to it unless a ransom is paid.</li>
-            <audio controls  >
+            <audio id='Ran'>
               <source src="{% static 'mp3/learn/Ransomware.mp3' %}" type ='audio/mpeg'>
             </audio>
+            <a onclick="playAudio('Ran')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a onclick="pauseAudio('Ran')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
 </ul>
 <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Preventative Measures</h1>
 <p style="font-size: larger"> The best way to avoid your information becoming compromised is by staying on the defense
@@ -184,9 +207,12 @@
   you are being safe. As well, you can use the services offered on our website to see if your
  information has been a part of a data breach.</p>
 
-        <audio controls  >
+        <audio id='PM'>
           <source src="{% static 'mp3/learn/Prev_Meas.mp3' %}" type ='audio/mpeg'>
+          
         </audio>
+        <a onclick="playAudio('PM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a onclick="pauseAudio('PM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
 
 
  <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Resources for Further Learning</h1>
@@ -196,7 +222,20 @@
   <a href="https://us-cert.cisa.gov/ncas/tips">https://us-cert.cisa.gov/ncas/tips</a>
 <!-- </li>
 </ul> -->
-
+<script>
+  
+  function playAudio(value) {
+    var audio = document.getElementById(String(value));
+    audio.play();
+    //var audio = new Audio(String(value));
+    //audio.play();
+  }
+  function pauseAudio(value) {
+    var audio = document.getElementById(String(value));
+    audio.pause();
+  }
+ 
+</script>
 </div>
 {% endblock %}
 </html>

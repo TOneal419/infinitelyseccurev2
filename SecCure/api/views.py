@@ -31,6 +31,7 @@ class PwnView(generics.CreateAPIView):
             if (request.data['domainname'] != "") :
                 payload = {'domain': request.data['domainname']}
             else:
+                #print("porque no trabaja")
                 payload = {'domain': 'adobe.com'} 
             r = requests.get(url, params=payload)
             if r.status_code == 200:
@@ -38,8 +39,10 @@ class PwnView(generics.CreateAPIView):
                 #print (r.json()[0])
                 list_holder = []
                 serializer_var = {}
-                serializer_var.update({"Name": data[0]['Name'], "Domain" : data[0]['Domain'], "Description": data[0]['Description'], "BreachDate": data[0]['BreachDate']})
-            
+                try:
+                    serializer_var.update({"Name": data[0]['Name'], "Domain" : data[0]['Domain'], "Description": data[0]['Description'], "BreachDate": data[0]['BreachDate']})
+                except:
+                    serializer_var.update({'Name': "Not Detected", "Domain":request.data['domainname'], "BreachDate":"", "Description": "N/A"})
                 list_holder.append(serializer_var)
                # print (serializer_var)
                 list = json.dumps(list_holder)
@@ -66,8 +69,11 @@ class VtotView(generics.CreateAPIView):
         # url_id = vt.url_id(request.data['Url'])
 
         url_id = vt.url_id(request.POST.get('Url', 'www.google.com'))
-
+        if (url_id == ""):
+            url_id = 'www.google.com'
+        
         url = client.get_object("/urls/{}", url_id)
+
         # print ('$')
 
         # print (request.data['Url'])

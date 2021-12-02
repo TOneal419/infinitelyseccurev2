@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
   </head>
 <div class="jumbotron">
   <nav class="navbar navbar-default navbar-static-top navbar-inverse">
@@ -50,43 +50,58 @@
       </ul>
     </div>
   </nav>
-  <audio>
+
+  <audio id="test">
     <source src="{% static 'mp3/HIBP/welcome.mp3' %}" type ='audio/mpeg'>
   </audio>
+  <audio id='means'>
+    <source src="{% static 'mp3/HIBP/pwned_means.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='is'>
+    <source src="{% static 'mp3/HIBP/hibp_is.mp3' %}" type ='audio/mpeg'>
+  </audio> 
+  <audio id='todo'>
+    <source src="{% static 'mp3/HIBP/pwned_todo.mp3' %}" type ='audio/mpeg'>
+  </audio> 
+
+  <audio id='using'>
+    <source src="{% static 'mp3/HIBP/using_hibp.mp3' %}" type ='audio/mpeg'>
+  </audio> 
 <body>
   <h2>What does being "pwned" mean?</h2>
   <p>Being pwned means that an account of yours has been compromised.</p>
-        <audio controls>
-          <source src="{% static 'mp3/HIBP/pwned_means.mp3' %}" type ='audio/mpeg'>
-        </audio>
+  <a  onclick="playAudio('means')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+  <a  onclick="pauseAudio('means')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+        
   <h2>What is haveibeenpwned?</h2>
   <p>haveibeenpwned is a site run by a trusted member of the cybersecurity community that is able to inform whether a domain has been compromised at some point.</p>
   <p>On the <a href="https://haveibeenpwned.com/">haveibeenpwned website</a>, you can check if your email and/or phone number has been compromised as well.</p>
-        <audio controls  >
-          <source src="{% static 'mp3/HIBP/hibp_is.mp3' %}" type ='audio/mpeg'>
-        </audio>
+  <a  onclick="playAudio('is')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+  <a  onclick="pauseAudio('is')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+
   <h2>What to do if you have been pwned?</h2>
   <p>If your account(s) have been compromised, you should change the password to the affected account(s).</p>
   <p>Ensure that you have two factor authentication enabled if you want to be more secure, it makes it harder to break into your account.</p>
-        <audio controls  >
-          <source src="{% static 'mp3/HIBP/pwned_todo.mp3' %}" type ='audio/mpeg'>
-        </audio>
+        <a  onclick="playAudio('todo')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('todo')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <h2>How to use:</h2>
-  <p>Example Input that shows has been pwned: google</p>
-  <p>Example Input that shows has not been pwned: pinterest</p>
-  
+  <p>Example Input that shows has been pwned: adobe.com</p>
+  <p>Example Input that shows has not been pwned: pinterest.com</p>
+  <a  onclick="playAudio('using')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+  <a  onclick="pauseAudio('using')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <p>Input the domain name that you want to check in the text box here:</p>
-  <form id='form_vt' action='api/pwn' method="post">
+  <form id='form_vt' method="post">
+     {% csrf_token %}
     <input id="pwninput" type="text" name="domainname">
     <input id='pwninputid' type='hidden' name='Id'>
-    <a href="#" onclick='submitForm1()'>Submit</a>
+    <a  onclick='submitForm1()'>Submit</a>
     
   </form>
-  <audio controls  >
-    <source src="{% static 'mp3/HIBP/using_hibp.mp3' %}" type ='audio/mpeg'>
-  </audio>
+  
+   
   <script>
     function submitForm1() {
+     
       //let form = document.getElementById("form_vt");
       //document.getElementById("vtoutput").innerHTML = form.submit().innerHTML;
       var http = new XMLHttpRequest();
@@ -97,20 +112,50 @@
       http.send(params);
       http.onload = function() {
         const myObj = JSON.parse(http.responseText)[0]
-        var res = "The domain " + String(myObj.Domain) + " was breached on " + String(myObj.BreachDate);
+        var res = "On " + String(myObj.BreachDate) +" the domain " + String(myObj.Domain) + " was breached" 
         res += ". " + String(myObj.Description);
+        if (String(myObj.Name) == "Not Detected") {
+          res = "The domain " + String(myObj.Domain) + " was not found in the database."
+        }
         document.getElementById('pwnoutput').innerHTML = res;
         // finished with hibp now creating audio
-         
+        var https = new XMLHttpRequest();
+          https.open("POST", "api/tts", true);
+          https.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          var hold = document.getElementById('pwnoutput');
+          if (String(hold.innerHTML) == "undefined") {
+            hold = "No Content";
+          } 
+          var params = "filename=HIBP/result" +"&scripts=" + String(hold.textContent || hold.innerText) ;
+          https.send(params);
+          
       }
+      
+
     }
   </script>
   <h2>Results:</h2>
-  <p id="pwnoutput"></p>
-      {% comment %} <audio controls  >
-        <source src="{% static 'mp3/HIBP/results.mp3' %}" type ='audio/mpeg'>
-      </audio> {% endcomment %}
+  <p id="pwnoutput">No Content</p>
+  <a onclick="playAudio('result')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+  <a onclick="pauseAudio('result')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  <meta http-equiv="Cache-control" content="no-cache">
+       <audio id='result'>
+        <source src="{% static 'mp3/HIBP/result.mp3' %}" type ='audio/mpeg' >
+      </audio> 
 
+      <script>
+        function playAudio(value) {
+          var audio = document.getElementById(String(value));
+          audio.play();
+          //var audio = new Audio(String(value));
+          //audio.play();
+        }
+        function pauseAudio(value) {
+          var audio = document.getElementById(String(value));
+          audio.pause();
+        }
+       
+      </script>
 </body>
 
 </div>
