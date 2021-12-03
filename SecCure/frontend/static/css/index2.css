@@ -41,9 +41,7 @@ background: #7646c1
 color: #32266f;
 max-width: 75%;
 }
-.navbar+.jumbotron {
-margin-top: -20px
-}
+
 .jumbotron .lang-logo {
 display: block;
 background: #b01302;
@@ -65,7 +63,7 @@ ul {
   overflow: hidden;
 }
 
-.nav li {
+/* .nav li {
   float: left;
 }
 
@@ -73,7 +71,7 @@ ul {
   display: block;
   padding: 8px;
   /* background-color: #dddddd; */
-}
+} */
 #navbar{
   width: 65%;
 }
@@ -111,9 +109,9 @@ button {
   border: 5px solid blue;
 }
 
-.container {
+/* .container {
   padding: 15px;
-}
+} */
 
 .card {
   /* Add shadows to create the "card" effect */
@@ -121,6 +119,6 @@ button {
   transition: 0.3s;
 }
 
-.contain {
+/* .contain {
   padding: 2px 16px;
-}
+} */
