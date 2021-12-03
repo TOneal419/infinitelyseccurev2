@@ -14,7 +14,7 @@ import vt
 from .voicerss_tts import *
 # Create your views here.
 
-import playsound
+#import playsound
 from numpy import random
 # Change to generics.listAPIview to get a full list of the database
 
@@ -138,8 +138,8 @@ class TTSView(generics.CreateAPIView):
             # f.write(data3)
             # f.close()
             res = file
-            stat = 201
-            playsound.playsound(file)
+            #stat = 201
+            #playsound.playsound(file)
             
             stat = 200
  
