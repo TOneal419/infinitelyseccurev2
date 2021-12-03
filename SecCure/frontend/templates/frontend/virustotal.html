@@ -68,9 +68,10 @@
         <a  onclick="pauseAudio('HU')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   <p>Input the URL that you want to check in the text box here:</p>
   <form id='form_vt' method="post">
+    {% csrf_token %}
     <input id="vtinput" type="text" name="Url">
     <input id='vtinputid' type='hidden' name='Id'>
-    <button onclick='submitForm()'>Submit</button>
+    <a onclick='submitForm()'>Submit</a>
 
   </form>
   <script>
