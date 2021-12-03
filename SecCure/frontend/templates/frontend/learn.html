@@ -55,8 +55,25 @@
   </section>
   
    <!-- Phishing  -->
-   <section class="container" style="text-align: center;">
-    
+   <section class="container">
+    <div id="parent" style="display: flex;
+    height: 100px;
+    text-align: center;">
+      <div id="left-child">
+        <img src="{% static 'phishing.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
+      </div>
+      <div id="right-child">
+        <h2 >Phishing</h2>
+        <p style="font-size:x-large;">This is one of the most common attacks that you will run into.
+          It’s a type of social engineering that convinces a user to share
+           sensitive information by appearing to be trustworthy to the user.
+          This form of attack often appears in the form of an email disguising
+          itself to trick you into sharing information. Steps that you can take
+          to protect yourself include never clicking on any suspicious links, paying
+          attention to the source as it could be an email or website with spelling/grammatical errors.
+        </p>
+      </div>
+    </div>
     <audio id='phish'>
       <source src="{% static 'mp3/learn/phishing.mp3' %}" type ='audio/mpeg'>
     </audio>

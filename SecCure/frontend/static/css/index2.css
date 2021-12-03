@@ -91,9 +91,11 @@ section:nth-child(2) {
 div.parent{
   display: flex;
   height: 100px;
+  text-align: center;
 }
 fiv.left-child{
   width: 50%;
+  margin-right: 10px;
 }
 div.right-child{
   flex-grow: 1;
