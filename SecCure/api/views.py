@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
+
 from rest_framework.serializers import Serializer
 from .models import Pwn, Vtot, TTS
 from .serializers import PwnSerializer, VtotSerializer, TTSSerializer
@@ -9,10 +10,12 @@ import requests
 import time
 import json
 import vt
+
 from .voicerss_tts import *
 # Create your views here.
 
-
+import playsound
+import random
 # Change to generics.listAPIview to get a full list of the database
 
 class PwnView(generics.CreateAPIView):
@@ -99,8 +102,12 @@ class TTSView(generics.CreateAPIView):
         stat = 400
        
         try:
+           # print(Path(__file__).resolve().parent.parent)
             fi = "frontend\\static\\mp3\\"
-            file = fi + request.data['filename'] + ".mp3"
+            print (fi)
+            r1 = random.randint(1,10000000)
+            r2 = random.randint(1,10000000)
+            file = fi + str(r1) + request.data['filename']  + str(r2) + ".mp3"
             
            
             urlVoice = 'https://api.voicerss.org/?'
@@ -127,7 +134,12 @@ class TTSView(generics.CreateAPIView):
             # play_buffer (audio__data support the buffer interface, num_channels, bytes per sample, sample rate in Hz)
             with open(file, 'wb+') as f:
                     f.write(data3)
+            # f = open(file, "wb+")
+            # f.write(data3)
+            # f.close()
             res = file
+            playsound.playsound(file)
+            
             stat = 200
  
         except Exception as e:
@@ -139,5 +151,8 @@ class TTSView(generics.CreateAPIView):
         var = {'File' : res, 'Status' : stat}
         list = json.dumps(var)
         list2 = json.loads(list)
- 
+        #sleep(1)
+        
+        
         return Response(list2, status = stat)
+
