@@ -82,23 +82,31 @@
     </div>
   </section>
 
-  <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Man in the Middle</h2></center>
-    <div class="card" style="display:flex;">
-    <li style="font-size:x-large;margin-right: 10px;">
-      These attacks are exactly what they suggest with having a middle man in between a device 
-      and the server they are being used with. This middle man is going to steal information and 
-      can even alter this communication that is happening. Wireless networks that aren't as secure 
-      like public WiFi makes you more vulnerable to these attacks, so try to make sure you are using 
-      secure and trusted networks or even setting up a VPN to protect yourself. A Secure Sockets Layer 
-      certificate can also be protected on your website in order to encrypt a user's browser who visits.
-    </li>
-          <audio id="MITM">
-            <source src="{% static 'mp3/learn/MITM.mp3' %}" type ='audio/mpeg'>
-          </audio>
-          <a onclick="playAudio('MITM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-          <a onclick="pauseAudio('MITM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    <img src="{% static 'mtim.png' %}" alt="Laptop with login box hooked on a fishing hook" style="width:140%; border-radius: 25px;">
-  </div>
+  <!-- Middle Man -->
+  <section class="container">
+    <div class="grid-container">
+      <div class="grid-child">
+        <h2>Man in the Middle</h2>
+        <p style="font-size:x-large;">
+          These attacks are exactly what they suggest with having a middle man in between a device 
+          and the server they are being used with. This middle man is going to steal information and 
+          can even alter this communication that is happening. Wireless networks that aren't as secure 
+          like public WiFi makes you more vulnerable to these attacks, so try to make sure you are using 
+          secure and trusted networks or even setting up a VPN to protect yourself. A Secure Sockets Layer 
+          certificate can also be protected on your website in order to encrypt a user's browser who visits. 
+        </p>
+      </div>
+      <div class="grid-child">
+        <img src="{% static 'mtim.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
+      </div>
+    </div>
+    <div class="container" style="text-align: center;">
+      <audio id="MITM">
+        <source src="{% static 'mp3/learn/MITM.mp3' %}" type ='audio/mpeg'>
+      </audio>
+      <a onclick="playAudio('MITM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a onclick="pauseAudio('MITM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> </div>
+  </section>
 
     <br>
     <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Denial of Service</h2></center>
