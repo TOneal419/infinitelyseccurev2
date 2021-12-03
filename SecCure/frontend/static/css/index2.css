@@ -90,7 +90,7 @@ ul {
     display: grid;
 
     grid-template-columns: repeat(2, auto);
-    justify-content: space-evenly;
+    /*justify-content: space-evenly; */
     grid-auto-rows: 50%;
     grid-gap: 75px;
 }
