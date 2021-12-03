@@ -70,19 +70,27 @@
       </div>
     </div>
   </nav>
-  <div class="jumbotron">
-  <div class="container" style="align-items: center;">
-    <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Types of Attacks</h1>
 
-    <p style="font-size: larger"> There are a variety of ways that different attacks may be presented to you, so it is important to stay informed of all of them so you can be aware and not fall into one. </p>
-    <audio id='ToA'>
-     <source src="{% static 'mp3/learn/ToA.mp3' %}" type ='audio/mpeg'>
-    </audio>
-    <a onclick="playAudio('ToA')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-    <a onclick="pauseAudio('ToA')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-  </div> 
-  <ul>
-  <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Phishing</h2></center>
+  <div class="jumbotron">
+    <section>
+  <div class="container mt-2" style="align-items: center;">
+    
+    <h1 style=" font-size: xx-large;color: #32266f; text-align: center;">Types of Attacks
+      <audio id='ToA'>
+        <source src="{% static 'mp3/learn/ToA.mp3' %}" type ='audio/mpeg'>
+      </audio>
+      <a onclick="playAudio('ToA')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a onclick="pauseAudio('ToA')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+    </h1>
+    <p style="font-size: larger; text-align: center;"> There are a variety of ways that different attacks may be presented to you, so it is important to stay informed of all of them so you can be aware and not fall into one. </p>
+    
+  </div>
+</section>
+  
+   <!-- Phishing  -->
+   <section>
+  <div class="container">
+    <h2 class="contain" style="text-align: center; color:#2776EA">Phishing</h2>
     <div class="card" style="display:flex;">
     <img src="{% static 'phishing.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
     <li style="font-size:x-large;margin-left: 10px;">This is one of the most common attacks that you will run into.
@@ -99,8 +107,9 @@
           </audio>
           <a onclick="playAudio('phish')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
         <a  onclick="pauseAudio('phish')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+    </div>
   </div>
-
+  </section>
   <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Man in the Middle</h2></center>
     <div class="card" style="display:flex;">
     <li style="font-size:x-large;margin-right: 10px;">
