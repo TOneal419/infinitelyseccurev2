@@ -122,7 +122,7 @@
           if (String(hold.innerHTML) == "undefined") {
             hold = "No Content";
           } 
-          var params = "filename=VT/results" +"&scripts=" + String(hold.textContent || hold.innerText) ;
+          var params = "filename=results" +"&scripts=" + String(hold.textContent || hold.innerText) ;
           https.send(params);
       }
     }
