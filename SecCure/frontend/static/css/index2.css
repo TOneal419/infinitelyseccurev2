@@ -74,7 +74,9 @@ ul {
   padding: 8px;
   /* background-color: #dddddd; */
 }
-
+#navbar{
+  width: 65%;
+}
 .box {
     padding: 75px 0;
     border-radius: 15px;
