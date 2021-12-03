@@ -37,10 +37,10 @@ border-color: #845ac7
 .jumbotron .btn-primary:hover {
 background: #7646c1
 }
-.jumbotron p {
+/* .jumbotron p {
 color: #32266f;
 max-width: 75%;
-}
+} */
 
 .jumbotron .lang-logo {
 display: block;
