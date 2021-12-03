@@ -1,4 +1,3 @@
-
 <html>
   <head>
     {% load static %} 
@@ -82,8 +81,8 @@
   </section>
 
   <!-- Middle Man -->
-  <section class="container">
-    <div class="grid-container">
+  <section>
+    <div class="grid-container container ">
       <div class="grid-child">
         <h2>Man in the Middle</h2>
         <p style="font-size:x-large;">
@@ -109,11 +108,11 @@
 
   <!-- Denial of Service -->
   <section class="container">
-    <div class="float-container">
-      <div class="float-child">
+    <div class="grid-container">
+      <div class="grid-child">
         <img src="{% static 'denialofservice.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
       </div>
-      <div class="float-child">
+      <div class="grid-child">
         <h2 >Denial of Service</h2>
         <p style="font-size:x-large;">
           These attacks occur on websites when the attacker causes a mass number of bots to flood a website 
@@ -135,41 +134,54 @@
     </div>
   </section>
 
-    <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">SQL Injection</h2></center>
-    <div class="card" style="display:flex;">
-    <li style="font-size:x-large;margin-right: 10px;">
-      Structured Query Language (SQL) Injections occur when a hacker places code to alter the
-      back end databases into a server. This can occur on a website in any place that saves data 
-      such as a search bar, contact form, comment section, or any other space that accepts data.
-      For this reason, the person creating these spaces need to make sure they are properly checked.
-     One way to do this is making sure the dataa they are taking in for these entries are specific 
-    to what they are wanting so other data won't be inserted.
-    </li>
-          <audio id="SQL">
-            <source src="{% static 'mp3/learn/SQL_Inject.mp3' %}" type ='audio/mpeg'>
-          </audio>
-          <a  onclick="playAudio('SQL')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('SQL')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    <img src="{% static 'sqlinjection.png' %}" alt="Laptop with login box hooked on a fishing hook" style="width:160%; border-radius: 25px;">
-  </div>
-
-    <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Zero-day Exploit</h2></center>
-    <div class="card" style="display:flex;">
-    <img src="{% static 'zeroday.png' %}" alt="Laptop with login box hooked on a fishing hook" style="width:100%; border-radius: 25px;">
-    <li style="font-size:x-large;margin-left: 10px; margin-top: 100px;">
-      This attack occurs by exposing a vulnerability within a computer's software or hardware. This 
-      flaw then can be exploited to have malware installed before it can even be detected by a developer 
-      and have that flaw fixed. This is fixed by the developer, but it can often take months or years.
-    </li>  
-
-          <audio id="0day"  >
-            <source src="{% static 'mp3/learn/0dayEx.mp3' %}" type ='audio/mpeg'>
-          </audio>
-          <a  onclick="playAudio('0day')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('0day')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-  </div>
-    <br>
-</ul>
+  <section class="container">
+    <div class="grid-container">
+      <div class="grid-child">
+        <img src="{% static 'sqlinjection.png' %}" alt="Laptop with login box hooked on a fishing hook" width=500 length=500 style="border-radius: 25px;">
+      </div>
+      <div class="grid-child">
+        <h2>SQL Injection</h2>
+        <p style="font-size:x-large;">
+          Structured Query Language (SQL) Injections occur when a hacker places code to alter the
+          back end databases into a server. This can occur on a website in any place that saves data 
+          such as a search bar, contact form, comment section, or any other space that accepts data.
+          For this reason, the person creating these spaces need to make sure they are properly checked.
+          One way to do this is making sure the dataa they are taking in for these entries are specific 
+          to what they are wanting so other data won't be inserted.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+    <audio id="SQL">
+      <source src="{% static 'mp3/learn/SQL_Inject.mp3' %}" type ='audio/mpeg'>
+    </audio>
+    <a  onclick="playAudio('SQL')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+    <a  onclick="pauseAudio('SQL')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+    </div>
+  </section>
+    
+  <section class="container">
+    <div class="grid-container">
+      <div class="grid-child">
+        <h2>Zero-day Exploit</h2>
+        <p style="font-size:x-large;">
+          This attack occurs by exposing a vulnerability within a computer's software or hardware. This 
+          flaw then can be exploited to have malware installed before it can even be detected by a developer 
+          and have that flaw fixed. This is fixed by the developer, but it can often take months or years.
+        </p>
+      </div>
+      <div class="grid-child">
+        <img src="{% static 'zeroday.png' %}" alt="Laptop with login box hooked on a fishing hook" width=500 length=500 style=" border-radius: 25px;">
+      </div>
+    </div>
+    <div class="container">
+      <audio id="0day"  >
+        <source src="{% static 'mp3/learn/0dayEx.mp3' %}" type ='audio/mpeg'>
+      </audio>
+      <a  onclick="playAudio('0day')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a  onclick="pauseAudio('0day')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+    </div>
+  </section>
 
 <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Types of Malware</h1>
 

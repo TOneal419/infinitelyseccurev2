@@ -88,7 +88,7 @@ section:nth-child(2n) {
 }
 
 /* Section Allignment */
-div.parent{
+/* div.parent{
   display: flex;
   height: 100px;
   text-align: center;
@@ -98,14 +98,14 @@ fiv.left-child{
   margin-right: 10px;
 }
 div.right-child{
-  flex-grow: 1;
+  flex-grow: 1; */
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   grid-gap: 10px;
 }
-.float-container {
+/* .float-container {
   padding: 20px;
 }
 
@@ -113,7 +113,7 @@ div.right-child{
   width: 50%;
   float: left;
   padding: 20px;
-} 
+}  */
 
 
 .box {
