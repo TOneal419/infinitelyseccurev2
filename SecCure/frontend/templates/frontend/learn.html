@@ -8,7 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
-    <link rel="stylesheet" type="text/css" href="static/css/index2.css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- JS scripts -->
@@ -108,28 +107,33 @@
       <a onclick="pauseAudio('MITM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> </div>
   </section>
 
-    <br>
-    <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Denial of Service</h2></center>
-    <div class="card" style="display:flex;">
-    <img src="{% static 'denialofservice.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
-    <li style="font-size:x-large;margin-left: 10px;">
-      These attacks occur on websites when the attacker causes a mass number of bots to flood a website 
-      in order to cause the system to crash from the overwhelming traffic. This can occur in either the 
-      website being flooded from traffic or from a specific service being flooded with information. 
-      This system crashing will mean that the users who are real people trying to use it won't be able to access it. 
-      Although this type of attack doesn't have as much of an issue with personal information being lost, it can 
-      have serious effects for a company to get it back up and running by losing resources of time and money. For this 
-      reason, it is more likely to occur on a higher-profile website although any website is still vulnerable to attack.
-    </li>
-    
-          <audio id="DoS">
-            <source src="{% static 'mp3/learn/DoS.mp3' %}" type ='audio/mpeg'>
-          </audio>
-          <a  onclick="playAudio('DoS')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('DoS')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-  </div>
-  
-    <br>
+  <!-- Denial of Service -->
+  <section class="container">
+    <div class="float-container">
+      <div class="float-child">
+        <img src="{% static 'denialofservice.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
+      </div>
+      <div class="float-child">
+        <h2 >Denial of Service</h2>
+        <p style="font-size:x-large;">
+          These attacks occur on websites when the attacker causes a mass number of bots to flood a website 
+          in order to cause the system to crash from the overwhelming traffic. This can occur in either the 
+          website being flooded from traffic or from a specific service being flooded with information. 
+          This system crashing will mean that the users who are real people trying to use it won't be able to access it. 
+          Although this type of attack doesn't have as much of an issue with personal information being lost, it can 
+          have serious effects for a company to get it back up and running by losing resources of time and money. For this 
+          reason, it is more likely to occur on a higher-profile website although any website is still vulnerable to attack.
+        </p>
+      </div>
+    </div>
+    <div class="container" style="text-align: center;">
+      <audio id="DoS">
+        <source src="{% static 'mp3/learn/DoS.mp3' %}" type ='audio/mpeg'>
+      </audio>
+      <a onclick="playAudio('DoS')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a onclick="pauseAudio('DoS')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+    </div>
+  </section>
 
     <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">SQL Injection</h2></center>
     <div class="card" style="display:flex;">

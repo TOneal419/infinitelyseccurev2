@@ -80,7 +80,7 @@ section {
   padding: 2rem 20%;
 }
 
-section:nth-child(2) {
+section:nth-child(2n) {
   background:#b13d59;
   color: white;
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
@@ -105,6 +105,16 @@ div.right-child{
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
+.float-container {
+  padding: 20px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+} 
+
 
 .box {
     padding: 75px 0;
