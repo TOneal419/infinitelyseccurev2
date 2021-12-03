@@ -126,7 +126,7 @@
           if (String(hold.innerHTML) == "undefined") {
             hold = "No Content";
           } 
-          var params = "filename=HIBP/result" +"&scripts=" + String(hold.textContent || hold.innerText) ;
+          var params = "filename=result" +"&scripts=" + String(hold.textContent || hold.innerText) ;
           https.send(params);
           
       }
