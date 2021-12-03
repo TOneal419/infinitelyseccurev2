@@ -43,7 +43,7 @@
 <!-- <h2>It's time to learn!</h2>  -->
 
   <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
     <div class="container me-auto mb-2 mb-lg-0" id="navbar">
       <a class="navbar-brand" href="/" style="font-family:'Great Vibes', cursive">
         <!-- <img src="seccure imgae" alt="seccure image" width="60" height="60" class="d-inline-block" id="navImg"> -->
@@ -72,44 +72,36 @@
   </nav>
 
   <div class="jumbotron">
-    <section>
-  <div class="container mt-2" style="align-items: center;">
-    
-    <h1 style=" font-size: xx-large;color: #32266f; text-align: center;">Types of Attacks
+    <section class="container" style="text-align: center;">
+      <h1 style=" font-size: xx-large;color: #32266f;">Types of Attacks</h1>
       <audio id='ToA'>
         <source src="{% static 'mp3/learn/ToA.mp3' %}" type ='audio/mpeg'>
       </audio>
       <a onclick="playAudio('ToA')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
       <a onclick="pauseAudio('ToA')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-    </h1>
-    <p style="font-size: larger; text-align: center;"> There are a variety of ways that different attacks may be presented to you, so it is important to stay informed of all of them so you can be aware and not fall into one. </p>
-    
-  </div>
-</section>
+      <p style="font-size: larger;"> There are a variety of ways that different attacks may be presented to you, so it is important to stay informed of all of them so you can be aware and not fall into one. </p>
+    </section>
   
    <!-- Phishing  -->
-   <section>
-  <div class="container">
-    <h2 class="contain" style="text-align: center; color:#2776EA">Phishing</h2>
-    <div class="card" style="display:flex;">
+   <section class="container" style="text-align: center;">
+    <h2 class="contain">Phishing</h2>
+    
     <img src="{% static 'phishing.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
-    <li style="font-size:x-large;margin-left: 10px;">This is one of the most common attacks that you will run into.
+    <p style="font-size:x-large;margin-left: 10px;">This is one of the most common attacks that you will run into.
       It’s a type of social engineering that convinces a user to share
        sensitive information by appearing to be trustworthy to the user.
       This form of attack often appears in the form of an email disguising
       itself to trick you into sharing information. Steps that you can take
       to protect yourself include never clicking on any suspicious links, paying
       attention to the source as it could be an email or website with spelling/grammatical errors.
-    </li>  
-    
+    </p>
           <audio id='phish'>
             <source src="{% static 'mp3/learn/phishing.mp3' %}" type ='audio/mpeg'>
           </audio>
           <a onclick="playAudio('phish')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
         <a  onclick="pauseAudio('phish')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    </div>
-  </div>
   </section>
+
   <center><h2 class="contain" style="text-decoration: underline; color:#2776EA">Man in the Middle</h2></center>
     <div class="card" style="display:flex;">
     <li style="font-size:x-large;margin-right: 10px;">
