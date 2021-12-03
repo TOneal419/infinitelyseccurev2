@@ -133,13 +133,12 @@
   <audio id='res'>
     <source src="{% static 'mp3/Vt/results.mp3' %}" type ='audio/mpeg'>
   </audio> 
-  <meta http-equiv="Cache-control" content="no-cache">
+  
   <a  onclick="playAudio('res')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
         <a  onclick="pauseAudio('res')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   
 </body>
-</div>
-<script>
+  <script>
   function playAudio(value) {
     var audio = document.getElementById(String(value));
     audio.play();
@@ -152,5 +151,7 @@
   }
  
 </script>
+</div>
+
 {% endblock %}
 </html>
