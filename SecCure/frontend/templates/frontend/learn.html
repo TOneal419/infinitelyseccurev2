@@ -185,67 +185,72 @@
     </div>
   </section>
 
-<h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Types of Malware</h1>
+  <!-- Type of Malware -->
+  <section>
+    <h1 style="font-size: xx-large;color: #32266f;">Types of Malware</h1>
+    <p style="font-size: larger"> Similar to the different types of attacks, there are also a wide variety of malware that your device 
+      can become exposed to. The best way to stay on the defensive is to have softwares installed to protect your 
+      device. This includes different anti-malware and anti-virus softwares along with making sure you are downloading 
+      safe files and connecting to private networks.
+          </p>
+          <audio id='ToM' >
+            <source src="{% static 'mp3/learn/ToM.mp3' %}" type ='audio/mpeg'>
+          </audio>
+          <a  onclick="playAudio('ToM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a  onclick="pauseAudio('ToM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+    <br>
+    <ul style="font-size: larger;">
+      <li style="text-decoration: underline; color:#2776EA">Adware</li>
+      <li>This is a very common software that works by showing you ads on your computer that you don't want. 
+        It then uses any information it can collect about you in order to deliver more personalized ads to 
+        your computer screen.
+      </li> 
+              <audio id='Ad'>
+                <source src="{% static 'mp3/learn/Adware.mp3' %}" type ='audio/mpeg'>
+              </audio>
+              <a onclick="playAudio('Ad')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a  onclick="pauseAudio('Ad')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+      <br>
+      <li style="text-decoration: underline; color:#2776EA">Viruses</li>
+      <li>A computer virus contains code that is malicious and when it runs is designed to cause harm or steal data.</li> 
+            <audio id='Vir'>
+              <source src="{% static 'mp3/learn/Viruses.mp3' %}" type ='audio/mpeg'>
+            </audio>
+            <a onclick="playAudio('Vir')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a  onclick="pauseAudio('Vir')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+      <br>
+      <li style="text-decoration: underline; color:#2776EA">Trojans</li>
+      <li>These may also be known as a "trojan horse", but it a malicious software that disguises 
+        itself to appear real in order to get you to run it on your computer.
+      </li> 
+            <audio id="Toj">
+              <source src="{% static 'mp3/learn/Trojans.mp3' %}" type ='audio/mpeg'>
+            </audio>
+            <a  onclick="playAudio('Toj')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a  onclick="pauseAudio('Toj')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+      <br>
+      <li style="text-decoration: underline; color:#2776EA">Worms</li>
+      <li>These worms work by being able to infect all the computers that are on the same network.
+        They work by consuming bandwidth and interrupting networks.</li> 
+              <audio id='wom'>
+                <source src="{% static 'mp3/learn/Worms.mp3' %}" type ='audio/mpeg'>
+              </audio>
+              <a onclick="playAudio('wom')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a onclick="pauseAudio('wom')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+      <br>
+      <li style="text-decoration: underline; color:#2776EA">Ransomware</li>
+      <li>Ransomware is normally targeted at individuals.
+        It threatens to publish a user's personal data and/or block access to it unless a ransom is paid.</li>
+              <audio id='Ran'>
+                <source src="{% static 'mp3/learn/Ransomware.mp3' %}" type ='audio/mpeg'>
+              </audio>
+              <a onclick="playAudio('Ran')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+          <a onclick="pauseAudio('Ran')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+    </ul>
+  </section>
 
-  <p style="font-size: larger"> Similar to the different types of attacks, there are also a wide variety of malware that your device 
-    can become exposed to. The best way to stay on the defensive is to have softwares installed to protect your 
-    device. This includes different anti-malware and anti-virus softwares along with making sure you are downloading 
-    safe files and connecting to private networks.
-        </p>
-        <audio id='ToM' >
-          <source src="{% static 'mp3/learn/ToM.mp3' %}" type ='audio/mpeg'>
-        </audio>
-        <a  onclick="playAudio('ToM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('ToM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-  <br>
-  <ul style="font-size: larger;">
-    <li style="text-decoration: underline; color:#2776EA">Adware</li>
-    <li>This is a very common software that works by showing you ads on your computer that you don't want. 
-      It then uses any information it can collect about you in order to deliver more personalized ads to 
-      your computer screen.
-    </li> 
-            <audio id='Ad'>
-              <source src="{% static 'mp3/learn/Adware.mp3' %}" type ='audio/mpeg'>
-            </audio>
-            <a onclick="playAudio('Ad')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('Ad')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    <br>
-    <li style="text-decoration: underline; color:#2776EA">Viruses</li>
-    <li>A computer virus contains code that is malicious and when it runs is designed to cause harm or steal data.</li> 
-          <audio id='Vir'>
-            <source src="{% static 'mp3/learn/Viruses.mp3' %}" type ='audio/mpeg'>
-          </audio>
-          <a onclick="playAudio('Vir')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('Vir')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    <br>
-    <li style="text-decoration: underline; color:#2776EA">Trojans</li>
-    <li>These may also be known as a "trojan horse", but it a malicious software that disguises 
-      itself to appear real in order to get you to run it on your computer.
-    </li> 
-          <audio id="Toj">
-            <source src="{% static 'mp3/learn/Trojans.mp3' %}" type ='audio/mpeg'>
-          </audio>
-          <a  onclick="playAudio('Toj')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('Toj')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    <br>
-    <li style="text-decoration: underline; color:#2776EA">Worms</li>
-    <li>These worms work by being able to infect all the computers that are on the same network.
-      They work by consuming bandwidth and interrupting networks.</li> 
-            <audio id='wom'>
-              <source src="{% static 'mp3/learn/Worms.mp3' %}" type ='audio/mpeg'>
-            </audio>
-            <a onclick="playAudio('wom')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a onclick="pauseAudio('wom')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-    <br>
-    <li style="text-decoration: underline; color:#2776EA">Ransomware</li>
-    <li>Ransomware is normally targeted at individuals.
-      It threatens to publish a user's personal data and/or block access to it unless a ransom is paid.</li>
-            <audio id='Ran'>
-              <source src="{% static 'mp3/learn/Ransomware.mp3' %}" type ='audio/mpeg'>
-            </audio>
-            <a onclick="playAudio('Ran')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a onclick="pauseAudio('Ran')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
-</ul>
+
+  
 <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Preventative Measures</h1>
 <p style="font-size: larger"> The best way to avoid your information becoming compromised is by staying on the defense
   and taking security measures. Educating yourself on different types of attacks and malware
