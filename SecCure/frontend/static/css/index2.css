@@ -101,7 +101,7 @@ section#alternate-end{
 
 /* Scroll */
 #return-to-top {
-  position: relative;
+  position: fixed;
   z-index: -1;
   bottom: 20px;
   right: 20px;
