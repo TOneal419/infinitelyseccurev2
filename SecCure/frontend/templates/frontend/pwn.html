@@ -14,9 +14,27 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!-- JS scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  </head>
-  <body>
-    <!-- Nav Bar -->
+  </head>    
+<div>
+
+  <audio id="test">
+    <source src="{% static 'mp3/HIBP/welcome.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='means'>
+    <source src="{% static 'mp3/HIBP/pwned_means.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='is'>
+    <source src="{% static 'mp3/HIBP/hibp_is.mp3' %}" type ='audio/mpeg'>
+  </audio> 
+  <audio id='todo'>
+    <source src="{% static 'mp3/HIBP/pwned_todo.mp3' %}" type ='audio/mpeg'>
+  </audio> 
+
+  <audio id='using'>
+    <source src="{% static 'mp3/HIBP/using_hibp.mp3' %}" type ='audio/mpeg'>
+  </audio> 
+<body>
+  <!-- Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
     <div class="container me-auto mb-2 mb-lg-0" id="navbar">
       <a class="navbar-brand" href="/" style="font-family:'Great Vibes', cursive">
@@ -44,46 +62,7 @@
       </div>
     </div>
   </nav>
-<div class="jumbotron">
-  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-        </li>
-        <li>
-          <a href="/learn">Learn</a>
-        </li>
-        <li>
-          <a href="/virustotal">VirusTotal</a>
-        </li>
-        <li>
-          <a href="/pwn">havibeenpwned</a>
-        </li>
-        <li>
-          <a href="/test">Test Yourself</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
-  <audio id="test">
-    <source src="{% static 'mp3/HIBP/welcome.mp3' %}" type ='audio/mpeg'>
-  </audio>
-  <audio id='means'>
-    <source src="{% static 'mp3/HIBP/pwned_means.mp3' %}" type ='audio/mpeg'>
-  </audio>
-  <audio id='is'>
-    <source src="{% static 'mp3/HIBP/hibp_is.mp3' %}" type ='audio/mpeg'>
-  </audio> 
-  <audio id='todo'>
-    <source src="{% static 'mp3/HIBP/pwned_todo.mp3' %}" type ='audio/mpeg'>
-  </audio> 
-
-  <audio id='using'>
-    <source src="{% static 'mp3/HIBP/using_hibp.mp3' %}" type ='audio/mpeg'>
-  </audio> 
-<body>
   <h2>What does being "pwned" mean?</h2>
   <p>Being pwned means that an account of yours has been compromised.</p>
   <a  onclick="playAudio('means')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
