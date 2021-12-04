@@ -78,6 +78,12 @@ section#alternate-1 {
   padding: 8rem 10%;
 }
 
+section#alternate-box{
+  background:white;
+  color: black;
+  padding: 8rem 10%;
+}
+
 /* Section Allignment */
 
 .grid-container {

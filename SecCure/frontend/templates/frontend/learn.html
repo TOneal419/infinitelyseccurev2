@@ -186,8 +186,8 @@
   </section>
 
   <!-- Type of Malware -->
-  <section>
-    <h1 style="font-size: xx-large;color: #32266f;">Types of Malware</h1>
+  <section class="container">
+    <h1 style="font-size: xx-large;color: #32266f; text-align: center;">Types of Malware</h1>
     <p style="font-size: larger"> Similar to the different types of attacks, there are also a wide variety of malware that your device 
       can become exposed to. The best way to stay on the defensive is to have softwares installed to protect your 
       device. This includes different anti-malware and anti-virus softwares along with making sure you are downloading 
@@ -249,21 +249,25 @@
     </ul>
   </section>
 
-
+  <!-- Preventative Measures -->
+  <section class="container" id="alternate-box">
+    <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Preventative Measures</h1>
+    <p style="font-size: larger"> The best way to avoid your information becoming compromised is by staying on the defense
+      and taking security measures. Educating yourself on different types of attacks and malware
+      is an important first step. It will make you more aware of your online activity and that
+      you are being safe. As well, you can use the services offered on our website to see if your
+     information has been a part of a data breach.</p>
+    <audio id='PM'>
+      <source src="{% static 'mp3/learn/Prev_Meas.mp3' %}" type ='audio/mpeg'>
+    </audio>
+    <a onclick="playAudio('PM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+    <a onclick="pauseAudio('PM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+  </section>
   
-<h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Preventative Measures</h1>
-<p style="font-size: larger"> The best way to avoid your information becoming compromised is by staying on the defense
-  and taking security measures. Educating yourself on different types of attacks and malware
-  is an important first step. It will make you more aware of your online activity and that
-  you are being safe. As well, you can use the services offered on our website to see if your
- information has been a part of a data breach.</p>
 
-        <audio id='PM'>
-          <source src="{% static 'mp3/learn/Prev_Meas.mp3' %}" type ='audio/mpeg'>
-          
-        </audio>
-        <a onclick="playAudio('PM')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a onclick="pauseAudio('PM')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+
+
+        
 
 
  <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Resources for Further Learning</h1>
