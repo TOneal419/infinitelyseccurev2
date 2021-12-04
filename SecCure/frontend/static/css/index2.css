@@ -68,7 +68,7 @@ ul {
 }
 
 section {
-  padding: 3rem 20%;
+  padding: 2.5rem 20%;
 }
 
 section#alternate-1 {
@@ -79,9 +79,16 @@ section#alternate-1 {
 }
 
 section#alternate-box{
-  background:rgba(230, 221, 221, 0.931);
+  background:rgba(245, 224, 231, 0.89);
   color: black;
   padding: 5rem 10%;
+}
+
+section#alternate-end{
+  background:#b13d59;
+  color: white;
+  clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 100%);
+  padding: 8rem 10%;
 }
 
 /* Section Allignment */
