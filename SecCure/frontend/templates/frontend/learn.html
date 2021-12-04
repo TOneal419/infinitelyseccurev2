@@ -54,8 +54,8 @@
   </section>
   
    <!-- Phishing  -->
-   <section class="container">
-    <div class="grid-container">
+   <section id="alternate-1">
+    <div class="grid-container container">
       <div class="grid-child">
         <img src="{% static 'phishing.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
       </div>
@@ -107,8 +107,8 @@
   </section>
 
   <!-- Denial of Service -->
-  <section class="container">
-    <div class="grid-container">
+  <section id="alternate-1">
+    <div class="grid-container container">
       <div class="grid-child">
         <img src="{% static 'denialofservice.png' %}" alt="Laptop with login box hooked on a fishing hook" style="border-radius: 25px;" width=500 length=500>
       </div>
@@ -135,12 +135,10 @@
   </section>
 
   <!-- SQL Injection -->
-  <section class="container">
-    <div class="grid-container" style="display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
-    grid-gap: 10px;">
+  <section>
+    <div class="grid-container container">
       <div class="grid-child">
-        <img src="{% static 'sqlinjection.png' %}" alt="Laptop with login box hooked on a fishing hook" width=500 length=500 style="border-radius: 25px;">
+        <img src="{% static 'sqlinjection.png' %}" alt="Laptop with login box hooked on a fishing hook" width=450 length=500 style="border-radius: 25px;">
       </div>
       <div class="grid-child">
         <h2>SQL Injection</h2>
@@ -155,16 +153,17 @@
       </div>
     </div>
     <div class="container">
-    <audio id="SQL">
-      <source src="{% static 'mp3/learn/SQL_Inject.mp3' %}" type ='audio/mpeg'>
-    </audio>
-    <a  onclick="playAudio('SQL')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-    <a  onclick="pauseAudio('SQL')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+      <audio id="SQL">
+        <source src="{% static 'mp3/learn/SQL_Inject.mp3' %}" type ='audio/mpeg'>
+      </audio>
+      <a  onclick="playAudio('SQL')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a  onclick="pauseAudio('SQL')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     </div>
   </section>
     
-  <section class="container">
-    <div class="grid-container">
+  <!--Zero-Day Exploit -->
+  <section id="alternate-1">
+    <div class="grid-container container">
       <div class="grid-child">
         <h2>Zero-day Exploit</h2>
         <p style="font-size:x-large;">
@@ -178,11 +177,11 @@
       </div>
     </div>
     <div class="container">
-      <audio id="0day"  >
-        <source src="{% static 'mp3/learn/0dayEx.mp3' %}" type ='audio/mpeg'>
-      </audio>
-      <a  onclick="playAudio('0day')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-      <a  onclick="pauseAudio('0day')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
+        <audio id="0day"  >
+          <source src="{% static 'mp3/learn/0dayEx.mp3' %}" type ='audio/mpeg'>
+        </audio>
+        <a  onclick="playAudio('0day')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('0day')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a> 
     </div>
   </section>
 
