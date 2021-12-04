@@ -68,20 +68,20 @@ ul {
 }
 
 section {
-  padding: 2rem 20%;
+  padding: 3rem 20%;
 }
 
 section#alternate-1 {
   background:#b13d59;
-  color: rgba(224, 201, 201, 0.924);
+  color: white;
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  padding: 4rem 10%;
+  padding: 8rem 10%;
 }
 
 section#alternate-box{
-  background:white;
+  background:rgba(230, 221, 221, 0.931);
   color: black;
-  padding: 8rem 10%;
+  padding: 5rem 10%;
 }
 
 /* Section Allignment */
