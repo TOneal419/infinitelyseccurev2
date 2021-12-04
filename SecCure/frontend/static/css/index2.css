@@ -73,9 +73,9 @@ section {
 
 section#alternate-1 {
   background:#b13d59;
-  color: white;
+  color: rgba(224, 201, 201, 0.924);
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  padding: 8rem 10%;
+  padding: 4rem 10%;
 }
 
 section#alternate-box{
