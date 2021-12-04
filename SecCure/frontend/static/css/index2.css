@@ -71,7 +71,7 @@ section {
   padding: 2rem 20%;
 }
 
-section.alternate {
+section:nth-child(2n) {
   background:#b13d59;
   color: white;
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
