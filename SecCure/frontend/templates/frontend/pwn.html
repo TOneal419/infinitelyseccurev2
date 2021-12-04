@@ -10,7 +10,40 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!-- JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
+  <body>
+    <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
+    <div class="container me-auto mb-2 mb-lg-0" id="navbar">
+      <a class="navbar-brand" href="/" style="font-family:'Great Vibes', cursive">
+        <!-- <img src="seccure imgae" alt="seccure image" width="60" height="60" class="d-inline-block" id="navImg"> -->
+        SecCure
+      </a>
+      <div class="d-flex" >
+        <ul class="navbar-nav ">
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/learn">Learn</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/virustotal">VirusTotal</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link active" aria-current="page" href="/pwn">havibeenpwned</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/test">Test Yourself</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <div class="jumbotron">
   <nav class="navbar navbar-default navbar-static-top navbar-inverse">
     <div class="container">
@@ -143,4 +176,5 @@
 
 </div>
 {% endblock %}
+</body>
 </html>
