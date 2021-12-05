@@ -16,68 +16,86 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
 
-<body>
+  <!-- Audio Files -->
+  <audio id='intro'>
+    <source src="{% static 'mp3/home/intro.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='learn'>
+    <source src="{% static 'mp3/home/learn.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='HIBP'>
+    <source src="{% static 'mp3/home/HIBP.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='VT'>
+    <source src="{% static 'mp3/home/VT.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='Test'>
+    <source src="{% static 'mp3/home/Test.mp3' %}" type ='audio/mpeg'>
+  </audio>
+
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
+      <div class="container me-auto mb-2 mb-lg-0" id="navbar">
+        <a class="navbar-brand" href="/" style="font-family:'Great Vibes', cursive"> 
+          SecCure
+        </a>
+        <div class="d-flex" >
+          <ul class="navbar-nav ">
+            <li class="nav-item" id="navItem">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/learn">Learn</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/virustotal">VirusTotal</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/pwn">haveibeenpwned</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/test">Test Yourself</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   <div class="jumbotron text-center">
     <div class="container">
       <h1>Welcome to SecCure!</h1>
-
-      
-
       <p style="margin: 1em auto 2em; font-size: 25px;">Our mission is to be educational to those who need and want to learn more about staying
-        safe on the internet.</p>
+        safe on the internet.
+      </p>
       <p style="margin: 1em auto 2em; font-size: 20px;">You are here because someone who cares about you has told you about this website.
-        We hope you use the site with all of its capabilities. Here you can become SecCure while staying safe.</p>
-              <audio id='intro'>
-                <source src="{% static 'mp3/home/intro.mp3' %}" type ='audio/mpeg'>
-              </audio>
-              <a href="#" onclick="playAudio('intro')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-                <a href="#" onclick="pauseAudio('intro')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+        We hope you use the site with all of its capabilities. Here you can become SecCure while staying safe.
+      </p>
+      <a href="#" onclick="playAudio('intro')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a href="#" onclick="pauseAudio('intro')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
 
-      <div id="shell" style="margin-left: 22.15%">
+      <div class="container" id="shell" style="margin-left: 22.15%">
           <button class="box, module" > <a onclick="location.href='learn'">Learn: Educate yourself to stay safe out there!</a>
             <a href="#" onclick="playAudio('learn')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
             <a href="#" onclick="pauseAudio('learn')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-          </button>
-                <audio id='learn'>
-                  <source src="{% static 'mp3/home/learn.mp3' %}" type ='audio/mpeg'>
-
-                </audio>
-               
-                
+          </button>   
           <button class="box, module"> <a onclick="location.href='pwn'">
             haveibeenpwned: Check if a website you wish to visit has experienced a data breach!</a>
             <a href="#" onclick="playAudio('HIBP')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
             <a href="#" onclick="pauseAudio('HIBP')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-          </button>
-                <audio id='HIBP'>
-                  <source src="{% static 'mp3/home/HIBP.mp3' %}" type ='audio/mpeg'>
-                </audio>
-                
+          </button>    
           <button class="box, module" ><a onclick="location.href='virustotal'">VirusTotal: Check if a file or URL you want to open has been tampered with!
           </a>
             <a href="#" onclick="playAudio('VT')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
             <a href="#" onclick="pauseAudio('VT')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-          </button>
-                <audio id='VT'>
-                  <source src="{% static 'mp3/home/VT.mp3' %}" type ='audio/mpeg'>
-                </audio>
-                
+          </button>   
           <button class="box, module"> <a onclick="location.href='test'">Test: Check your knowledge and see if you’re ready to stay secure!
           </a>
           <a href="#" onclick="playAudio('Test')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
           <a href="#" onclick="pauseAudio('Test')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-
           </button>
-                <audio id='Test'>
-                  <source src="{% static 'mp3/home/Test.mp3' %}" type ='audio/mpeg'>
-                </audio>
-                
-
         </div>
-  <br>
     </div>
-      
   </div>
 
 
