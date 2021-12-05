@@ -70,7 +70,6 @@
     <a  onclick="pauseAudio('means')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   </h2>
   <p>Being pwned means that an account of yours has been compromised.</p>
-  
     </div>
   
     <div class="container mb-3">
@@ -90,7 +89,6 @@
   </h2>
   <p>If your account(s) have been compromised, you should change the password to the affected account(s).</p>
   <p>Ensure that you have two factor authentication enabled if you want to be more secure, it makes it harder to break into your account.</p>
-        
     </div>
   </section> 
 
@@ -108,7 +106,7 @@
      {% csrf_token %}
     <input id="pwninput" type="text" name="domainname">
     <input id='pwninputid' type='hidden' name='Id'>
-    <a  onclick='submitForm1()'>Submit</a>
+    <button class="btn btn-primary" onclick='submitForm1()'>Submit &#8594;</button>
     
   </form>
   <a  onclick="playAudio('using')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
