@@ -1,65 +1,82 @@
-{% load static %}
+<html>
+  {% load static %}
 
-{% block content %}
-
-<!-- <div id='root'></div> -->
-<html style="margin-left: 20px; margin-right: 20px;">
+  {% block content %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/index2.css" %}" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!-- JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
-<div class="jumbotron">
-  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-        </li>
-        <li>
-          <a href="/learn">Learn</a>
-        </li>
-        <li>
-          <a href="/virustotal">VirusTotal</a>
-        </li>
-        <li>
-          <a href="/pwn">havibeenpwned</a>
-        </li>
-        <li>
-          <a href="/test">Test Yourself</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
+  <!-- Augio Files -->
+  <audio id='ty'>
+    <source src="{% static 'mp3/test/test_yourself.mp3' %}" type ='audio/mpeg'>
+  </audio>
 
-<h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Test Yourself</h1>
-<p style="font-size: larger">If you haven’t looked through our website to learn some new knowledge about maintaining security on the internet, then make sure you do that first. If you feel ready, then put your knowledge to the test to see if you’re ready to take on the internet!
-  <a onclick="playAudio('ty')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-  <a onclick="pauseAudio('ty')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
+      <div class="container me-auto mb-2 mb-lg-0" id="navbar">
+        <a class="navbar-brand" href="/" style="font-family:'Great Vibes', cursive">
+          <!-- <img src="seccure imgae" alt="seccure image" width="60" height="60" class="d-inline-block" id="navImg"> -->
+          SecCure
+        </a>
+        <div class="d-flex" >
+          <ul class="navbar-nav ">
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/learn">Learn</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/virustotal">VirusTotal</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link active" aria-current="page" href="/pwn">haveibeenpwned</a>
+            </li>
+            <li class="nav-item" id="navItem">
+              <a class="nav-link" href="/test">Test Yourself</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-</p>
-<audio id='ty'>
-  <source src="{% static 'mp3/test/test_yourself.mp3' %}" type ='audio/mpeg'>
-</audio>
+    <section class="container" style="text-align: center;">
+      <h1 style="text-decoration: underline; font-size: xx-large;color: #32266f;">Test Yourself</h1>
+      <p style="font-size: larger">If you haven’t looked through our website to learn some new knowledge about maintaining security on the internet, then make sure you do that first. If you feel ready, then put your knowledge to the test to see if you’re ready to take on the internet!
+      </p>
+      <a onclick="playAudio('ty')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a onclick="pauseAudio('ty')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+    </section>
+
+    <section id="alternate-end">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfW7jlnN2eD2f5NSYRnjijmMkWKHT0sjIbOVWp9zvdmAPnqDQ/viewform?embedded=true" width="640" height="3615" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
  
+    <!-- Javascript -->
+    <script>
+      function playAudio(value) {
+        var audio = document.getElementById(String(value));
+        audio.play();
+        //var audio = new Audio(String(value));
+        //audio.play();
+      }
+      function pauseAudio(value) {
+        var audio = document.getElementById(String(value));
+        audio.pause();
+      }
+    </script>
 
-<script>
-  function playAudio(value) {
-    var audio = document.getElementById(String(value));
-    audio.play();
-    //var audio = new Audio(String(value));
-    //audio.play();
-  }
-  function pauseAudio(value) {
-    var audio = document.getElementById(String(value));
-    audio.pause();
-  }
- 
-</script>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfW7jlnN2eD2f5NSYRnjijmMkWKHT0sjIbOVWp9zvdmAPnqDQ/viewform?embedded=true" width="640" height="3615" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-{% endblock %}
-</div>
+  </body>
+  {% endblock %}
 </html>
