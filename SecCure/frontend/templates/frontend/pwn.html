@@ -117,16 +117,19 @@
   <section></section>
 
   <section class="container" id="alternate-box">
-    <h2 style="text-align: center;">Results</h2>
-    <p id="pwnoutput">No Content</p>
-    <a onclick="playAudio('result')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-    <a onclick="pauseAudio('result')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+    <div class="container" style="text-align: center;">
+      <h2>Results</h2>
+      <p id="pwnoutput" >No Content</p>
+      <a onclick="playAudio('result')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+      <a onclick="pauseAudio('result')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  </div>
     <meta http-equiv="Cache-control" content="no-cache">
       <audio id='result'>
         <source src="{% static 'mp3/HIBP/result.mp3' %}" type ='audio/mpeg' >
       </audio> 
   </section>
    
+  <section></section>
 
   <!-- Javascript -->
   <script>
