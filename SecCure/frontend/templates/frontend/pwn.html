@@ -106,7 +106,7 @@
      {% csrf_token %}
     <input id="pwninput" type="text" name="domainname" size="50" style="text-align: center;">
     <input id='pwninputid' type='hidden' name='Id'> <br> <br>
-    <input type="button" class="btn btn-primary" name="submit" onclick='submitForm1()' value="Submit">
+    <input type="button" class="btn btn-danger" name="submit" onclick='submitForm1()' value="Submit">
     
   </form>
   <a  onclick="playAudio('using')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
