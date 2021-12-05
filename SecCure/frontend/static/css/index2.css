@@ -157,7 +157,7 @@ section#alternate-end{
     /* width: 98.6vw; */
     display: grid;
 
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     /*justify-content: space-evenly; */
     place-self: center;
     grid-auto-rows: 50%;
