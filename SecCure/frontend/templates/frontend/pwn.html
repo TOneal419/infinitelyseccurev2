@@ -94,15 +94,15 @@
 
   <section></section>
   <section class="container" id="alternate-box">
-    <div class="container">
-  <h2>How to use:</h2>
+    <div class="container" style="text-align: center;">
+  <h2>How to use</h2>
   <p>Example Input that shows has been pwned: adobe.com</p>
   <p>Example Input that shows has not been pwned: pinterest.com</p>
     </div>
   
-  <div class="container">
-  <p>Input the domain name that you want to check in the text box here:</p>
-  <form id='form_vt' method="post" style="text-align: center;">
+  <div class="container" style="text-align: center;">
+  <p>Input the domain name that you want to check in the text box below</p>
+  <form id='form_vt' method="post">
      {% csrf_token %}
     <input id="pwninput" type="text" name="domainname" size="50" style="text-align: center;">
     <input id='pwninputid' type='hidden' name='Id'> <br> <br>
@@ -117,7 +117,7 @@
   <section></section>
 
   <section class="container" id="alternate-box">
-    <h2>Results:</h2>
+    <h2 style="text-align: center;">Results</h2>
     <p id="pwnoutput">No Content</p>
     <a onclick="playAudio('result')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
     <a onclick="pauseAudio('result')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
