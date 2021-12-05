@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- Scroll Return to Top -->
-    <a href="javascript:backToHome()" id="return-to-top"><i class="icon-chevron-up"></i></a>
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
     <div class="container me-auto mb-2 mb-lg-0" id="navbar">
@@ -286,7 +286,18 @@
 
   <!-- Back to Top -->
   <script>
-  
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 80) {        
+            $('#return-to-top').fadeIn(200);    
+        } else {
+            $('#return-to-top').fadeOut(200);   
+        }
+    });
+    $('#return-to-top').click(function() {      
+        $('body,html').animate({
+            scrollTop : 0                       
+        }, 500);
+    });
   </script>
 
 <!--Bootstrap Bundle with Popper -->
