@@ -76,7 +76,7 @@
       <p>Malicious describes something that is intending to cause harm.</p>
     </div>
 
-    <div class="contianer mb-3">
+    <div class="container mb-3">
       <h2>
         What is VirusTotal?
         <a  onclick="playAudio('VTis')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
@@ -105,7 +105,7 @@
     <p>Input the URL that you want to check in the text box below</p>
     <form id='form_vt' method="post">
       {% csrf_token %}
-      <input id="vtinput" type="text" name="Url">
+      <input id="vtinput" type="text" name="Url" size="50" style="text-align: center;">
       <input id='vtinputid' type='hidden' name='Id'><br> <br>
       <input type="button" class="btn btn-danger" name="submit" onclick='submitForm()' value="Submit">
     </form>
@@ -116,8 +116,8 @@
   <section></section>
 
   <section id="alternate-box" class="container" style="text-align: center;">
-    <h2>Results:</h2>
-    <p id="vtoutput"></p>
+    <h2>Results:</h2><br>
+    <p id="vtoutput" style="text-align: left;"></p>
     <a  onclick="playAudio('res')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
     <a  onclick="pauseAudio('res')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   </section>
