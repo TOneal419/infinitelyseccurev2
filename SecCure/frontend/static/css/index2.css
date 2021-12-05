@@ -159,9 +159,9 @@ section#alternate-end{
 
     grid-template-columns: repeat(2, auto);
     /*justify-content: space-evenly; */
+    place-self: center;
     grid-auto-rows: 50%;
     grid-gap: 75px;
-    text-align: center;
 }
 
 button {
@@ -176,6 +176,7 @@ button {
   background: #88a2e2;
   position: relative;
   border: 5px solid blue;
+  place-self: center;
 }
 
 /* .container {
