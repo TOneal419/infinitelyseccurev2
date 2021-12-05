@@ -10,15 +10,15 @@ function pauseAudio(value) {
     audio.pause();
   }
 function scroll(){
-    $(window).scroll(function() {
+    (window).scroll(function() {
         if ($(this).scrollTop() >= 80) {        
             $('#return-to-top').fadeIn(200);    
         } else {
             $('#return-to-top').fadeOut(200);   
         }
     });
-    $('#return-to-top').click(function() {      
-        $('body,html').animate({
+    ('#return-to-top').click(function() {      
+        ('body,html').animate({
             scrollTop : 0                       
         }, 500);
     });
