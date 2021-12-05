@@ -16,68 +16,116 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
 
-  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-        </li>
-        <li>
-          <a href="/learn">Learn</a>
-        </li>
-        <li>
-          <a href="/virustotal">VirusTotal</a>
-        </li>
-        <li>
-          <a href="/pwn">havibeenpwned</a>
-        </li>
-        <li>
-          <a href="/test">Test Yourself</a>
-        </li>
-      </ul>
+  <!-- Audio Files -->
+  <audio id='mm'>
+    <source src="{% static 'mp3/VT/malicious_means.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='VTis'  >
+    <source src="{% static 'mp3/VT/VT_is.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='WTD'>
+    <source src="{% static 'mp3/VT/What_to_do.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='HU'>
+    <source src="{% static 'mp3/VT/How_to_Use.mp3' %}" type ='audio/mpeg'>
+  </audio>
+  <audio id='res'>
+    <source src="{% static 'mp3/VT/results.mp3' %}" type ='audio/mpeg'>
+  </audio> 
+
+<body>
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
+    <div class="container me-auto mb-2 mb-lg-0" id="navbar">
+      <a class="navbar-brand" href="/" style="font-family:'Great Vibes', cursive">
+        <!-- <img src="seccure imgae" alt="seccure image" width="60" height="60" class="d-inline-block" id="navImg"> -->
+        SecCure
+      </a>
+      <div class="d-flex" >
+        <ul class="navbar-nav ">
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/learn">Learn</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/virustotal">VirusTotal</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link active" aria-current="page" href="/pwn">haveibeenpwned</a>
+          </li>
+          <li class="nav-item" id="navItem">
+            <a class="nav-link" href="/test">Test Yourself</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
- 
-<body>
-  <h2>What does being "malicious" mean?</h2>
-  <p>Malicious describes something that is intending to cause harm.</p>
-      <audio id='mm'>
-        <source src="{% static 'mp3/VT/malicious_means.mp3' %}" type ='audio/mpeg'>
-      </audio>
-      <a  onclick="playAudio('mm')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('mm')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-  <h2>What is VirusTotal?</h2>
-  <p>VirusTotal is a trusted site within the cybersecurity community that is able to check a URL and tell you if it is malicious.</p>
-  <p>On the <a href="https://www.virustotal.com/gui/home/url">VirusTotal website</a>, you can also check files, IP addresses, domain names and file hashes to see if they are malicious.</p>
-      <audio id='VTis'  >
-        <source src="{% static 'mp3/VT/VT_is.mp3' %}" type ='audio/mpeg'>
-      </audio>
-      <a  onclick="playAudio('VTis')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('VTis')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-  <h2>What to do if you have discovered a malicious URL?</h2>
-  <p>The obvious course of action is to NOT go to the link.  However if the majority is showing that the link is harmless, it is unlikely to cause harm.  Also if threats are not there, it is also unlikely to be malicious.</p>
-      <audio id='WTD'>
-        <source src="{% static 'mp3/VT/What_to_do.mp3' %}" type ='audio/mpeg'>
-      </audio>
-      <a  onclick="playAudio('WTD')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('WTD')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-  <h2>How to use:</h2>
-  <p>Example Input that shows has some maliciousness: www.google.com</p>
-  <p>Example Input that shows has no maliciousness: www.pinterest.com</p>
-      <audio id='HU'>
-        <source src="{% static 'mp3/VT/How_to_Use.mp3' %}" type ='audio/mpeg'>
-      </audio>
-      <a  onclick="playAudio('HU')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('HU')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-  <p>Input the URL that you want to check in the text box here:</p>
-  <form id='form_vt' method="post">
-    {% csrf_token %}
-    <input id="vtinput" type="text" name="Url">
-    <input id='vtinputid' type='hidden' name='Id'>
-    <a onclick='submitForm()'>Submit</a>
+  <section></section>
 
-  </form>
+  <section class="container" id="alternate-box">
+    <div class="container mb-3">
+      <h2>
+        What does being "malicious" mean?
+        <a  onclick="playAudio('mm')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('mm')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+      </h2>
+      <p>Malicious describes something that is intending to cause harm.</p>
+    </div>
+
+    <div class="contianer mb-3">
+      <h2>
+        What is VirusTotal?
+        <a  onclick="playAudio('VTis')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('VTis')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+      </h2>
+      <p>VirusTotal is a trusted site within the cybersecurity community that is able to check a URL and tell you if it is malicious.</p>
+      <p>On the <a href="https://www.virustotal.com/gui/home/url">VirusTotal website</a>, you can also check files, IP addresses, domain names and file hashes to see if they are malicious.</p>
+    </div>
+
+    <div class="container">
+      <h2>
+        What to do if you have discovered a malicious URL?
+        <a  onclick="playAudio('WTD')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+        <a  onclick="pauseAudio('WTD')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+      </h2>
+      <p>The obvious course of action is to NOT go to the link.  However if the majority is showing that the link is harmless, it is unlikely to cause harm.  Also if threats are not there, it is also unlikely to be malicious.</p>
+    </div>  
+  </section>
+
+  <section></section>
+
+  <section id='alternate-box' class="container" style="text-align: center;">
+    <h2>How to use:</h2>
+    <p>Example Input that shows has some maliciousness: www.google.com</p>
+    <p>Example Input that shows has no maliciousness: www.pinterest.com</p> 
+    <p>Input the URL that you want to check in the text box below</p>
+    <form id='form_vt' method="post">
+      {% csrf_token %}
+      <input id="vtinput" type="text" name="Url">
+      <input id='vtinputid' type='hidden' name='Id'><br> <br>
+      <input type="button" class="btn btn-danger" name="submit" onclick='submitForm()' value="Submit">
+    </form>
+    <a onclick="playAudio('HU')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+    <a onclick="pauseAudio('HU')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  </section>
+
+  <section></section>
+
+  <section id="alternate-box" class="container" style="text-align: center;">
+    <h2>Results:</h2>
+    <p id="vtoutput"></p>
+    <a  onclick="playAudio('res')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+    <a  onclick="pauseAudio('res')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  </section>
+
+  <section></section>
+
+  <!-- Javascript -->
+
   <script>
   
     function submitForm() {
@@ -132,15 +180,6 @@
       }
     }
   </script>
-  <h2>Results:</h2>
-  <p id="vtoutput"></p>
-  
-  <audio id='res'>
-    <source src="{% static 'mp3/VT/results.mp3' %}" type ='audio/mpeg'>
-  </audio> 
-  
-  <a  onclick="playAudio('res')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-        <a  onclick="pauseAudio('res')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
   
 </body>
   <script>
