@@ -63,27 +63,39 @@
     </div>
   </nav>
 
+  <section id="alternate-box">
+    <div class="container">
   <h2>What does being "pwned" mean?</h2>
   <p>Being pwned means that an account of yours has been compromised.</p>
   <a  onclick="playAudio('means')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
   <a  onclick="pauseAudio('means')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
-        
+    </div>
+  
+    <div class="container">
   <h2>What is haveibeenpwned?</h2>
   <p>haveibeenpwned is a site run by a trusted member of the cybersecurity community that is able to inform whether a domain has been compromised at some point.</p>
   <p>On the <a href="https://haveibeenpwned.com/">haveibeenpwned website</a>, you can check if your email and/or phone number has been compromised as well.</p>
   <a  onclick="playAudio('is')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
   <a  onclick="pauseAudio('is')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+    </div>
 
+    <div class="container">
   <h2>What to do if you have been pwned?</h2>
   <p>If your account(s) have been compromised, you should change the password to the affected account(s).</p>
   <p>Ensure that you have two factor authentication enabled if you want to be more secure, it makes it harder to break into your account.</p>
         <a  onclick="playAudio('todo')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
         <a  onclick="pauseAudio('todo')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+    </div>
+  </section> 
+
+  <section id="alternate-box">
+    <div class="container">
   <h2>How to use:</h2>
   <p>Example Input that shows has been pwned: adobe.com</p>
   <p>Example Input that shows has not been pwned: pinterest.com</p>
-  <a  onclick="playAudio('using')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
-  <a  onclick="pauseAudio('using')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+    </div>
+  
+  <div class="container">
   <p>Input the domain name that you want to check in the text box here:</p>
   <form id='form_vt' method="post">
      {% csrf_token %}
@@ -92,8 +104,13 @@
     <a  onclick='submitForm1()'>Submit</a>
     
   </form>
-  
+  <a  onclick="playAudio('using')"><img src="{% static 'mp3/playbutton.png' %}" width=25 height=25></a>
+  <a  onclick="pauseAudio('using')"><img src="{% static 'mp3/pausebutton.png' %}" width=25 height=25></a>
+  </div>
+  </section>
    
+
+  <!-- Javascript -->
   <script>
     function submitForm1() {
      
@@ -151,6 +168,8 @@
         }
        
       </script>
+  <!--Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </div>
