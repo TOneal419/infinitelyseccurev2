@@ -1,3 +1,7 @@
+root{
+  --sectionBoxColor:rgba(245, 224, 231, 0.89);
+  --sectionTextColor: Black;
+}
 html{
   margin: 0;
   padding: 0;
@@ -9,6 +13,8 @@ body{
       background-attachment: fixed;
       background-size: cover;
     background-position:'center center';
+    --sectionBoxColor: rgba(245, 224, 231, 0.89);
+    --sectionTextColor: Black;
 }
 /* Dark Mode */
 body.dark{
@@ -16,7 +22,10 @@ body.dark{
   background-color: #35232a;
   color: #e6e6e6;
   background-repeat:repeat;
+  --sectionBoxColor: #41061c;
+  --sectionTextColor: white;
 }
+
 
 #main{
     /* position: fixed; */
@@ -132,8 +141,8 @@ section#alternate-1 {
 }
 
 section#alternate-box{
-  background:rgba(245, 224, 231, 0.89);
-  color: black;
+  background:var(--sectionBoxColor);
+  color: var(--sectionTextColor);
   padding: 5rem 10%;
 }
 
