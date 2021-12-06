@@ -34,7 +34,7 @@
     <source src="{% static 'mp3/home/Test.mp3' %}" type ='audio/mpeg'>
   </audio>
 
-  <body>
+  <body onclick="javascript:themeStatus()">
     <!-- Scroll Return to Top -->
     <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
     <!-- Nav Bar -->
@@ -59,6 +59,16 @@
             </li>
             <li class="nav-item" id="navItem">
               <a class="nav-link" href="/test">Test Yourself</a>
+            </li>
+            <li class="nav-item" id="darkModeToggle">
+              <a class="nav-link" style="text-decoration:none;">
+            <input type="checkbox" class="checkbox" id="checkbox" onclick="darkMode()" onchange="darkMode()">
+            <label for="checkbox" class="label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label> 
+            </a>
             </li>
           </ul>
         </div>
