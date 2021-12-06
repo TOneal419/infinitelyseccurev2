@@ -14,14 +14,17 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!-- JS scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{%static "frontend/main.js" %}"></script>
   </head>
 
-  <!-- Augio Files -->
+  <!-- Audio Files -->
   <audio id='ty'>
     <source src="{% static 'mp3/test/test_yourself.mp3' %}" type ='audio/mpeg'>
   </audio>
 
   <body>
+    <!-- Scroll Return to Top -->
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b13d59; ">
       <div class="container me-auto mb-2 mb-lg-0" id="navbar">
@@ -63,6 +66,24 @@
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfW7jlnN2eD2f5NSYRnjijmMkWKHT0sjIbOVWp9zvdmAPnqDQ/viewform?embedded=true" width="1080" height="3800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </section>
 
+    <!-- JavaScript -->
+
+    <!-- Back to Top -->
+    <script>
+      $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {        
+            $('#return-to-top').fadeIn(200);    
+        } else {
+            $('#return-to-top').fadeOut(200);   
+        }
+      });
+      $('#return-to-top').click(function() {      
+        $('body,html').animate({
+            scrollTop : 0                       
+        }, 500);
+      });
+    </script>
+    
   </body>
   {% endblock %}
 </html>
