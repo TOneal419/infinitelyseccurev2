@@ -14,7 +14,7 @@ body.dark{
   background-color: #35232a;
   color: #e6e6e6;
   background-image:none;
-  background-repeat:none;
+  background-repeat:repeat;
 }
 
 #main{
