@@ -134,38 +134,7 @@
 
   <!-- Javascript -->
   <script>
-    function submitForm1() {
-      //let form = document.getElementById("form_vt");
-      //document.getElementById("vtoutput").innerHTML = form.submit().innerHTML;
-      var http = new XMLHttpRequest();
-      
-      http.open("POST", "api/pwn", true);
-      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      var params = "domainname=" + document.getElementById('pwninput').value ;
-      http.send(params);
-      http.onload = function() {
-        const myObj = JSON.parse(http.responseText)[0]
-        var res = "On " + String(myObj.BreachDate) +" the domain " + String(myObj.Domain) + " was breached" 
-        res += ". " + String(myObj.Description);
-        if (String(myObj.Name) == "Not Detected") {
-          res = "The domain " + String(myObj.Domain) + " was not found in the database."
-        }
-        document.getElementById('pwnoutput').innerHTML = res;
-        // finished with hibp now creating audio
-        var https = new XMLHttpRequest();
-          https.open("POST", "api/tts", true);
-          https.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          var hold = document.getElementById('pwnoutput');
-          if (String(hold.innerHTML) == "undefined") {
-            hold = "No Content";
-          } 
-          var params = "filename=result" +"&scripts=" + String(hold.textContent || hold.innerText) ;
-          https.send(params);
-          
-      }
-      
-
-    }
+    
   </script>
   <script>
     $(window).scroll(function() {
