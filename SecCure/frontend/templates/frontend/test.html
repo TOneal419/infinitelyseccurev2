@@ -49,6 +49,16 @@
             <li class="nav-item" id="navItem">
               <a class="nav-link active" aria-current="page" href="/test">Test Yourself</a>
             </li>
+            <li class="nav-item" id="darkModeToggle">
+              <a class="nav-link" style="text-decoration:none;">
+            <input type="checkbox" class="checkbox" id="checkbox" onclick="darkMode()" onchange="darkMode()">
+            <label for="checkbox" class="label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label> 
+            </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -83,7 +93,7 @@
         }, 500);
       });
     </script>
-    
+  <script type="text/javascript">themeStatus();</script>
   </body>
   {% endblock %}
 </html>
