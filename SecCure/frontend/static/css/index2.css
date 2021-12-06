@@ -1,6 +1,7 @@
 root{
   --sectionBoxColor:rgba(245, 224, 231, 0.89);
   --sectionTextColor: Black;
+  --sectionAlternateColor: #b13d59;
 }
 html{
   margin: 0;
@@ -15,6 +16,7 @@ body{
     background-position:'center center';
     --sectionBoxColor: rgba(245, 224, 231, 0.89);
     --sectionTextColor: Black;
+    --sectionAlternateColor: #b13d59;
 }
 /* Dark Mode */
 body.dark{
@@ -22,7 +24,8 @@ body.dark{
   background-color: #35232a;
   color: #e6e6e6;
   background-repeat:repeat;
-  --sectionBoxColor: #461325;
+  --sectionBoxColor: #613948;
+  --sectionAlternateColor: #613948;
   --sectionTextColor: white;
 }
 
@@ -134,7 +137,7 @@ section {
 }
 
 section#alternate-1 {
-  background:#b13d59;
+  background: var(--sectionAlternateColor);
   color: white;
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   padding: 8rem 10%;
@@ -147,7 +150,7 @@ section#alternate-box{
 }
 
 section#alternate-end{
-  background:#b13d59;
+  background:var(--sectionAlternateColor);
   color: white;
   clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 100%);
   padding: 6rem 10%;
