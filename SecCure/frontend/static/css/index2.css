@@ -2,6 +2,7 @@ root{
   --sectionBoxColor:rgba(245, 224, 231, 0.89);
   --sectionTextColor: Black;
   --sectionAlternateColor: #b13d59;
+  --sectionEndColor: #b13d59;
 }
 html{
   margin: 0;
@@ -17,6 +18,7 @@ body{
     --sectionBoxColor: rgba(245, 224, 231, 0.89);
     --sectionTextColor: Black;
     --sectionAlternateColor: #b13d59;
+    --sectionEndColor: #b13d59;
 }
 /* Dark Mode */
 body.dark{
@@ -27,6 +29,7 @@ body.dark{
   --sectionBoxColor: #613948;
   --sectionAlternateColor: #613948;
   --sectionTextColor: white;
+  --sectionEndColor: rgb(78, 39, 49);
 }
 
 
