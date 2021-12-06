@@ -1,8 +1,9 @@
-html, body{
+html{
+  margin: 0;
+  padding: 0;
+}
+body{
     height: 100%;
-    margin: 0;
-    padding: 0;
-    /* background: white; */
     background-image: url('download1.jpg');
     background-repeat: no-repeat;
       background-attachment: fixed;
@@ -11,11 +12,10 @@ html, body{
 }
 /* Dark Mode */
 body.dark{
+  background-image:none;
   background-color: #35232a;
   color: #e6e6e6;
-  background-image:none;
   background-repeat:repeat;
-  height: auto;
 }
 
 #main{
