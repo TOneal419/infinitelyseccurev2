@@ -108,7 +108,6 @@ function darkMode() {
     const darkModeSwitch = document.getElementById('checkbox');
 
     darkModeSwitch.addEventListener('change',() => {   
-        alert("darkmode works");
         document.body.classList.toggle('dark');
         var theme = document.body.classList.contains('dark') ? 'dark' : 'light';
         localStorage.setItem("theme", theme);
@@ -116,7 +115,6 @@ function darkMode() {
 }
 
 function themeStatus() {
-    alert("themestatus works");
     const darkModeSwitch = document.getElementById('checkbox');
     var currentTheme = localStorage.getItem("theme");
     if(currentTheme === 'dark'){
